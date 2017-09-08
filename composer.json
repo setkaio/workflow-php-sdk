@@ -1,0 +1,14 @@
+{
+    "name": "setka/workflow-php-sdk",
+    "description": "SDK for communicating with Workflow service.",
+    "type": "library",
+    "license": "GPLv2 or later",
+    "authors": [
+        {
+            "name": "Kolya Korobochkin",
+            "email": "korobochkin@setka.io"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
