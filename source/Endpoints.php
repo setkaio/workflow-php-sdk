@@ -3,6 +3,8 @@ namespace Setka\WorkflowSDK;
 
 class Endpoints
 {
+    const API = 'https://workflow.setka.io/';
+
     /**
      * %1$s - space slug
      */

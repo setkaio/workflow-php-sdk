@@ -9,6 +9,16 @@ class AuthCredits
     protected $token;
 
     /**
+     * AuthCredits constructor.
+     *
+     * @param string $token
+     */
+    public function __construct($token)
+    {
+        $this->token = $token;
+    }
+
+    /**
      * @return string
      */
     public function getToken()
