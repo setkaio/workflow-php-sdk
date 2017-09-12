@@ -11,12 +11,11 @@ class APIFactory
      *
      * @return API
      */
-    public static function create($token = null, ClientInterface $client = null)
+    public static function create($token, ClientInterface $client = null)
     {
         $api = new API();
 
-        if($token)
-            $api->setAuth(new AuthCredits($token));
+        $api->setAuth(new AuthCredits($token));
 
         if(!$client)
             $client = ClientFactory::create();
