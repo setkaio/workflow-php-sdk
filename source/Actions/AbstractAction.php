@@ -18,6 +18,11 @@ abstract class AbstractAction implements ActionInterface
     protected $response;
 
     /**
+     * @var string
+     */
+    protected $httpMethod;
+
+    /**
      * @var array
      */
     protected $details;
@@ -40,6 +45,21 @@ abstract class AbstractAction implements ActionInterface
 
     public function lateConstruct()
     {
+    }
+
+    public function request()
+    {
+        $response = $this->getClient()->request(
+            $this->getHttpMethod(),
+            $this->getUrl(),
+            array(
+                'json' => $this->details['body'],
+            )
+        );
+
+        $this->setResponse($response);
+
+        return $this;
     }
 
     /**
@@ -79,6 +99,25 @@ abstract class AbstractAction implements ActionInterface
     {
         $this->response = $response;
 
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHttpMethod()
+    {
+        return $this->httpMethod;
+    }
+
+    /**
+     * @param string $httpMethod
+     *
+     * @return $this
+     */
+    public function setHttpMethod($httpMethod)
+    {
+        $this->httpMethod = $httpMethod;
         return $this;
     }
 

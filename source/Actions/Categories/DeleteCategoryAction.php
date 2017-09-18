@@ -5,27 +5,30 @@ use Setka\WorkflowSDK\Actions\AbstractAction;
 use Setka\WorkflowSDK\Endpoints;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CreateCategoryAction extends AbstractAction
+class DeleteCategoryAction extends AbstractAction
 {
     public function lateConstruct()
     {
-        $this->setHttpMethod('POST');
+        $this->setHttpMethod('DELETE');
     }
 
     public function getUrl()
     {
-        return sprintf(Endpoints::CATEGORIES, rawurlencode($this->details['space']));
+        return sprintf(
+            Endpoints::CATEGORY,
+            rawurlencode($this->details['space']),
+            rawurlencode($this->details['id'])
+        );
     }
 
     public function configureDetails(array $options)
     {
         $resolver = new OptionsResolver();
-        $resolver->setRequired(array('space', 'body'));
+        $resolver->setRequired(array('space', 'id', 'body'));
 
         $options = $resolver->resolve($options);
 
         $resolver = new OptionsResolver();
-        $resolver->setRequired('name');
         $resolver->setDefault('token', $this->getApi()->getAuth()->getToken());
 
         $options['body'] = $resolver->resolve($options['body']);
