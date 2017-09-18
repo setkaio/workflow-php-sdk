@@ -29,14 +29,17 @@ class CreateCategoryActionTest extends TestCase
 
     public function testRequest()
     {
-        $this->stub->setDetails(array(
+        $details = $this->stub->configureDetails(array(
             'space' => 'gg',
             'body' => array(
                 'name' => 'TEST NAME',
             ),
         ));
 
-        $this->stub->request();
+        $this->stub
+            ->setDetails($details)
+            ->request();
+
         var_dump($this->stub->getResponse());
     }
 }

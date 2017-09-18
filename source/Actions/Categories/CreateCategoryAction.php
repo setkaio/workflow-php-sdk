@@ -1,7 +1,6 @@
 <?php
 namespace Setka\WorkflowSDK\Actions\Categories;
 
-use GuzzleHttp\Client;
 use Setka\WorkflowSDK\Actions\AbstractAction;
 use Setka\WorkflowSDK\Endpoints;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -10,10 +9,8 @@ class CreateCategoryAction extends AbstractAction
 {
     public function request()
     {
-        /*$client = $this->getClient();
-        $client->post()*/
         $response = $this->getClient()->request('POST', $this->getUrl(), array(
-            'json' => $this->details,
+            'json' => $this->details['body'],
         ));
 
         $this->setResponse($response);
