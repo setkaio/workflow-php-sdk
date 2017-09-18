@@ -7,11 +7,17 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class DeleteCategoryAction extends AbstractAction
 {
+    /**
+     * @inheritdoc
+     */
     public function lateConstruct()
     {
         $this->setHttpMethod('DELETE');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function getUrl()
     {
         return sprintf(

@@ -7,11 +7,17 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UpdateCategoryAction extends AbstractAction
 {
+    /**
+     * @inheritdoc
+     */
     public function lateConstruct()
     {
         $this->setHttpMethod('PATH');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function getUrl()
     {
         return sprintf(

@@ -7,11 +7,17 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CreateCategoryAction extends AbstractAction
 {
+    /**
+     * @inheritdoc
+     */
     public function lateConstruct()
     {
         $this->setHttpMethod('POST');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function getUrl()
     {
         return sprintf(Endpoints::CATEGORIES, rawurlencode($this->details['space']));

@@ -3,37 +3,31 @@ namespace Setka\WorkflowSDK\Actions;
 
 use Psr\Http\Message\ResponseInterface;
 use Setka\WorkflowSDK\API;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 abstract class AbstractAction implements ActionInterface
 {
     /**
-     * @var API
+     * @var API Main class to use API.
      */
     protected $api;
 
     /**
-     * @var ResponseInterface
+     * @var ResponseInterface Response after HTTP request.
      */
     protected $response;
 
     /**
-     * @var string
+     * @var string HTTP method (for example GET, POST, PUT...).
      */
     protected $httpMethod;
 
     /**
-     * @var array
+     * @var array Used to prepare request URL and request body.
      */
     protected $details;
 
     /**
-     * @var OptionsResolver
-     */
-    protected $detailsResolver;
-
-    /**
-     * AbstractAction constructor.
+     * Construct Action instance and setup API.
      *
      * @param API $api
      */
@@ -43,10 +37,16 @@ abstract class AbstractAction implements ActionInterface
         $this->lateConstruct();
     }
 
-    public function lateConstruct()
-    {
-    }
+    /**
+     * Called from construct method.
+     *
+     * Used to configure instance without rewriting construct method.
+     */
+    public function lateConstruct() {}
 
+    /**
+     * @inheritdoc
+     */
     public function request()
     {
         $response = $this->getClient()->request(
@@ -63,7 +63,7 @@ abstract class AbstractAction implements ActionInterface
     }
 
     /**
-     * @return API
+     * @inheritdoc
      */
     public function getApi()
     {
@@ -71,9 +71,7 @@ abstract class AbstractAction implements ActionInterface
     }
 
     /**
-     * @param API $api
-     *
-     * @return $this
+     * @inheritdoc
      */
     public function setApi(API $api)
     {
@@ -83,7 +81,7 @@ abstract class AbstractAction implements ActionInterface
     }
 
     /**
-     * @return ResponseInterface
+     * @inheritdoc
      */
     public function getResponse()
     {
@@ -91,9 +89,7 @@ abstract class AbstractAction implements ActionInterface
     }
 
     /**
-     * @param ResponseInterface $response
-     *
-     * @return $this
+     * @inheritdoc
      */
     public function setResponse(ResponseInterface $response)
     {
@@ -103,7 +99,7 @@ abstract class AbstractAction implements ActionInterface
     }
 
     /**
-     * @return string
+     * @inheritdoc
      */
     public function getHttpMethod()
     {
@@ -111,9 +107,7 @@ abstract class AbstractAction implements ActionInterface
     }
 
     /**
-     * @param string $httpMethod
-     *
-     * @return $this
+     * @inheritdoc
      */
     public function setHttpMethod($httpMethod)
     {
@@ -122,7 +116,7 @@ abstract class AbstractAction implements ActionInterface
     }
 
     /**
-     * @return array
+     * @inheritdoc
      */
     public function getDetails()
     {
@@ -130,9 +124,7 @@ abstract class AbstractAction implements ActionInterface
     }
 
     /**
-     * @param array $details
-     *
-     * @return $this
+     * @inheritdoc
      */
     public function setDetails($details)
     {
@@ -142,25 +134,8 @@ abstract class AbstractAction implements ActionInterface
     }
 
     /**
-     * @return OptionsResolver
+     * @return \GuzzleHttp\ClientInterface
      */
-    public function getDetailsResolver()
-    {
-        return $this->detailsResolver;
-    }
-
-    /**
-     * @param OptionsResolver $detailsResolver
-     *
-     * @return $this
-     */
-    public function setDetailsResolver(OptionsResolver $detailsResolver)
-    {
-        $this->detailsResolver = $detailsResolver;
-
-        return $this;
-    }
-
     public function getClient()
     {
         return $this->getApi()->getClient();
