@@ -7,17 +7,19 @@ use Setka\WorkflowSDK\Models\Space;
 class API
 {
     /**
-     * @var AuthCredits
+     * @var AuthCredits Request access details.
      */
     protected $auth;
 
     /**
-     * @var ClientInterface
+     * @var ClientInterface Client which sends HTTP requests.
      */
     protected $client;
 
     /**
-     * @return AuthCredits
+     * Returns instance with access details.
+     *
+     * @return AuthCredits Instance with access details.
      */
     public function getAuth()
     {
@@ -25,9 +27,11 @@ class API
     }
 
     /**
-     * @param AuthCredits $auth
+     * Setup instance with access details.
      *
-     * @return $this
+     * @param AuthCredits $auth Access credentials.
+     *
+     * @return $this For chain calls.
      */
     public function setAuth(AuthCredits $auth)
     {
@@ -36,7 +40,9 @@ class API
     }
 
     /**
-     * @return ClientInterface
+     * Returns Client instance which used to send HTTP requests.
+     *
+     * @return ClientInterface Guzzle client.
      */
     public function getClient()
     {
@@ -44,34 +50,15 @@ class API
     }
 
     /**
-     * @param ClientInterface $client
+     * Setup Client instance which used to send HTTP requests.
      *
-     * @return $this
+     * @param ClientInterface $client Guzzle client.
+     *
+     * @return $this For chain calls.
      */
     public function setClient(ClientInterface $client)
     {
         $this->client = $client;
         return $this;
     }
-
-    /**
-     * @param $shortName string
-     *
-     * @return Space
-     */
-    public function getSpace($shortName)
-    {
-        return new Space($this, $shortName);
-    }
-
-    /*public function createCategory($name)
-    {
-        $url = sprintf(Endpoints::CATEGORIES, $this->getSpace()->getSlug());
-
-        return $this->getClient()->request('POST', $url, array(
-            'json' => array(
-                'name' => $name,
-            ),
-        ));
-    }*/
 }

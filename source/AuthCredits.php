@@ -4,14 +4,14 @@ namespace Setka\WorkflowSDK;
 class AuthCredits
 {
     /**
-     * @var string
+     * @var string Access token.
      */
     protected $token;
 
     /**
      * AuthCredits constructor.
      *
-     * @param string $token
+     * @param string $token Access token from Setka API.
      */
     public function __construct($token)
     {
@@ -19,7 +19,9 @@ class AuthCredits
     }
 
     /**
-     * @return string
+     * Returns access token.
+     *
+     * @return string Access token.
      */
     public function getToken()
     {
@@ -27,9 +29,11 @@ class AuthCredits
     }
 
     /**
-     * @param string $token
+     * Setup access token.
      *
-     * @return $this
+     * @param string $token Access token.
+     *
+     * @return $this For chain calls.
      */
     public function setToken($token)
     {
