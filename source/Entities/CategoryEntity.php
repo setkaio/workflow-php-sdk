@@ -9,6 +9,19 @@ class CategoryEntity extends AbstractEntity
     protected $name;
 
     /**
+     * CategoryEntity constructor.
+     *
+     * @param string $id
+     * @param string $name
+     */
+    public function __construct($id = null, $name = null)
+    {
+        $this->id = $id;
+        $this->name = $name;
+    }
+
+
+    /**
      * Returns the name of category.
      *
      * @return string Name of category.
