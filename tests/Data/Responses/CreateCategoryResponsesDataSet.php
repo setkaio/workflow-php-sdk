@@ -1,6 +1,9 @@
 <?php
 namespace Setka\WorkflowSDK\Tests\Data\Responses;
 
+use Setka\WorkflowSDK\Entities\CategoryEntity;
+use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
+use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 use Setka\WorkflowSDK\Tests\Data\AbstractAssociativeDataSet;
 
 class CreateCategoryResponsesDataSet extends AbstractAssociativeDataSet
@@ -21,6 +24,7 @@ class CreateCategoryResponsesDataSet extends AbstractAssociativeDataSet
                     'id' => '123456',
                     'name' => 'Test Name',
                 ),
+                'handle_expect' => CategoryEntity::class,
             ),
         );
 
@@ -35,6 +39,7 @@ class CreateCategoryResponsesDataSet extends AbstractAssociativeDataSet
                 'http_body' => array(
                     'message' => 'name must be filled',
                 ),
+                'handle_expect' => UnprocessableEntityException::class,
             ),
         );
 
@@ -49,6 +54,7 @@ class CreateCategoryResponsesDataSet extends AbstractAssociativeDataSet
                 'http_body' => array(
                     'message' => 'space must be filled',
                 ),
+                'handle_expect' => UnprocessableEntityException::class,
             ),
         );
 
@@ -61,6 +67,7 @@ class CreateCategoryResponsesDataSet extends AbstractAssociativeDataSet
             array(
                 'http_code' => 401,
                 'http_body' => array(),
+                'handle_expect' => UnauthorizedException::class,
             ),
         );
 
@@ -72,6 +79,7 @@ class CreateCategoryResponsesDataSet extends AbstractAssociativeDataSet
             array(
                 'http_code' => 401,
                 'http_body' => array(),
+                'handle_expect' => UnauthorizedException::class,
             ),
         );
 
@@ -84,6 +92,7 @@ class CreateCategoryResponsesDataSet extends AbstractAssociativeDataSet
             array(
                 'http_code' => 401,
                 'http_body' => array(),
+                'handle_expect' => UnauthorizedException::class,
             ),
         );
 
@@ -96,6 +105,7 @@ class CreateCategoryResponsesDataSet extends AbstractAssociativeDataSet
             array(
                 'http_code' => 401,
                 'http_body' => array(),
+                'handle_expect' => UnauthorizedException::class,
             ),
         );
 

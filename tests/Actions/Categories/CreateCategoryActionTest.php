@@ -67,12 +67,20 @@ class CreateCategoryActionTest extends TestCase
         $this->handler->setResponse($response);
 
         // Save details and make request
-        $this->stub
-            ->setDetails($details)
-            ->request();
+        try {
+            $entity = $this->stub
+                ->setDetails($details)
+                ->request()
+                ->handleResponse();
+        } catch (\Exception $exception) {
+            $entity = $exception;
+        }
 
+        $this->assertTrue(is_a($entity, $responseDetails['handle_expect']));
 
-        //var_dump($this->stub->getResponse()->getBody()->getContents());
+        if(!is_a($entity, \Exception::class)) {
+            $this->assertEquals($responseDetails['name'], $entity->getName());
+        }
     }
 
     public function casesRequest()
