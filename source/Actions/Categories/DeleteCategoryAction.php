@@ -4,6 +4,7 @@ namespace Setka\WorkflowSDK\Actions\Categories;
 use Setka\WorkflowSDK\Actions\AbstractAction;
 use Setka\WorkflowSDK\Endpoints;
 use Setka\WorkflowSDK\Entities\CategoryEntity;
+use Setka\WorkflowSDK\Exceptions\NotFoundException;
 use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
 use Setka\WorkflowSDK\Exceptions\UnknownResponseException;
 use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
@@ -14,7 +15,7 @@ class DeleteCategoryAction extends AbstractAction
     /**
      * Handle response.
      *
-     * @throws UnprocessableEntityException If something your your request was wrong.
+     * @throws NotFoundException If category not found.
      * @throws UnauthorizedException If token missed or invalid.
      * @throws UnknownResponseException If API returns unknown HTTP status code.
      *
@@ -32,10 +33,8 @@ class DeleteCategoryAction extends AbstractAction
 
                 return $entity;
 
-            case 422:
-                // TODO: 422 or 404
-                $data = $this->decodeResponse();
-                throw new UnprocessableEntityException($data['message']);
+            case 404:
+                throw new NotFoundException();
 
             case 401:
                 throw new UnauthorizedException();

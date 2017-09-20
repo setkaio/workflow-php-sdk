@@ -1,16 +1,17 @@
 <?php
-namespace Setka\WorkflowSDK\Tests;
+namespace Setka\WorkflowSDK\Tests\Actions\Categories;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use Setka\WorkflowSDK\Actions\Categories\CreateCategoryAction;
+use Setka\WorkflowSDK\Actions\Categories\DeleteCategoryAction;
 use Setka\WorkflowSDK\API;
 use Setka\WorkflowSDK\AuthCredits;
 use Setka\WorkflowSDK\Tests\Data\Endpoints;
-use Setka\WorkflowSDK\Tests\Data\Responses\CreateCategoryResponsesDataSet;
+use Setka\WorkflowSDK\Tests\Data\Responses\DeleteCategoryDataSet;
+use Setka\WorkflowSDK\Tests\LocalHandler;
 
-class CreateCategoryActionTest extends TestCase
+class DeleteCategoryActionTest extends TestCase
 {
     /**
      * @var API
@@ -18,7 +19,7 @@ class CreateCategoryActionTest extends TestCase
     protected $api;
 
     /**
-     * @var CreateCategoryAction
+     * @var DeleteCategoryAction
      */
     protected $stub;
 
@@ -41,7 +42,7 @@ class CreateCategoryActionTest extends TestCase
 
         $this->api->setClient($client);
 
-        $this->stub = new CreateCategoryAction($this->api);
+        $this->stub = new DeleteCategoryAction($this->api);
     }
 
     /**
@@ -57,9 +58,8 @@ class CreateCategoryActionTest extends TestCase
         // Prepare action
         $details = $this->stub->configureDetails(array(
             'space' => $requestDetails['space'],
-            'body' => array(
-                'name' => $requestDetails['name'],
-            ),
+            'body' => array(),
+            'id' => $requestDetails['id'],
         ));
 
         // Prepare response
@@ -86,6 +86,6 @@ class CreateCategoryActionTest extends TestCase
 
     public function casesRequest()
     {
-        return new CreateCategoryResponsesDataSet();
+        return new DeleteCategoryDataSet();
     }
 }
