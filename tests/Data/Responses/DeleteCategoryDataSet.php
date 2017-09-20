@@ -4,7 +4,6 @@ namespace Setka\WorkflowSDK\Tests\Data\Responses;
 use Setka\WorkflowSDK\Entities\CategoryEntity;
 use Setka\WorkflowSDK\Exceptions\NotFoundException;
 use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
-use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 use Setka\WorkflowSDK\Tests\Data\AbstractAssociativeDataSet;
 
 class DeleteCategoryDataSet extends AbstractAssociativeDataSet
