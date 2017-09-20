@@ -14,6 +14,15 @@ interface ActionInterface
     public function request();
 
     /**
+     * Handles (verifies) the response object.
+     *
+     * @throws \Exception See Action classes to see that exceptions can be throwed.
+     *
+     * @return mixed Different Entities or variable types (depends on action).
+     */
+    public function handleResponse();
+
+    /**
      * Returns the main API instance.
      *
      * @return API
