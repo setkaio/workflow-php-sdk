@@ -1,11 +1,14 @@
 <?php
 namespace Setka\WorkflowSDK\Tests;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Setka\WorkflowSDK\Actions\Categories\CreateCategoryAction;
 use Setka\WorkflowSDK\API;
 use Setka\WorkflowSDK\AuthCredits;
 use Setka\WorkflowSDK\ClientFactory;
+use Setka\WorkflowSDK\Tests\Data\Endpoints;
 
 class CreateCategoryActionTest extends TestCase
 {
@@ -19,27 +22,61 @@ class CreateCategoryActionTest extends TestCase
      */
     protected $stub;
 
+    /**
+     * @var LocalHandler
+     */
+    protected $handler;
+
     public function setUp()
     {
         $this->api = new API();
-        $this->api->setAuth(new AuthCredits('a98fc7fc7640fb86d848358223cc422b98e2eb3385107b80eb'));
-        $this->api->setClient(ClientFactory::create());
+        $this->api->setAuth(new AuthCredits(''));
+
+        $this->handler = new LocalHandler();
+
+        $client = new Client(array(
+            'base_uri' => Endpoints::TEST_API,
+            'handler' => $this->handler,
+        ));
+
+        $this->api->setClient($client);
+
         $this->stub = new CreateCategoryAction($this->api);
     }
 
-    public function testRequest()
+    /**
+     * @dataProvider casesRequest
+     *
+     * @param $requestDetails array
+     * @param $responseDetails array
+     */
+    public function testRequest($requestDetails, $responseDetails)
     {
+        $this->api->getAuth()->setToken($requestDetails['token']);
+
+        // Prepare action
         $details = $this->stub->configureDetails(array(
-            'space' => 'gg',
+            'space' => $requestDetails['space'],
             'body' => array(
-                'name' => 'TEST NAME',
+                'name' => $requestDetails['name'],
             ),
         ));
 
+        // Prepare response
+        $response = new Response($responseDetails['http_code'], array(), \GuzzleHttp\json_encode($responseDetails['http_body']));
+        $this->handler->setResponse($response);
+
+        // Save details and make request
         $this->stub
             ->setDetails($details)
             ->request();
 
-        var_dump($this->stub->getResponse());
+
+        //var_dump($this->stub->getResponse()->getBody()->getContents());
+    }
+
+    public function casesRequest()
+    {
+        return new CreateCategoryActionTest();
     }
 }

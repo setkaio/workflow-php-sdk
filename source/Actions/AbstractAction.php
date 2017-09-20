@@ -62,6 +62,11 @@ abstract class AbstractAction implements ActionInterface
         return $this;
     }
 
+    public function decodeResponse()
+    {
+        return $data = \GuzzleHttp\json_decode($this->getResponse()->getBody()->getContents());
+    }
+
     /**
      * @inheritdoc
      */
