@@ -81,7 +81,6 @@ class PublishTicketActionTest extends TestCase
         if(!is_a($entity, \Exception::class)) {
             $this->assertEquals($responseDetails['http_body']['id'], $entity->getId());
             $this->assertEquals($responseDetails['http_body']['title'], $entity->getTitle());
-
             $this->assertEquals($responseDetails['http_body']['category_id'], $entity->getCategoryId());
             $this->assertEquals($responseDetails['http_body']['state'], $entity->getState());
             $this->assertEquals($responseDetails['http_body']['published_at'], $entity->getPublishedAt());
