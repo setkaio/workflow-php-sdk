@@ -20,7 +20,8 @@ class CreateCategoryAction extends AbstractAction
      *
      * @return CategoryEntity If response was successful.
      */
-    public function handleResponse() {
+    public function handleResponse()
+    {
         switch($this->getResponse()->getStatusCode()) {
             case 200:
                 $entity = new CategoryEntity();
