@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 use Setka\WorkflowSDK\Actions\Categories\CreateCategoryAction;
 use Setka\WorkflowSDK\API;
 use Setka\WorkflowSDK\AuthCredits;
-use Setka\WorkflowSDK\ClientFactory;
 use Setka\WorkflowSDK\Tests\Data\Endpoints;
 use Setka\WorkflowSDK\Tests\Data\Responses\CreateCategoryResponsesDataSet;
 
