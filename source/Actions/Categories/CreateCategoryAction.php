@@ -14,8 +14,8 @@ class CreateCategoryAction extends AbstractAction
     /**
      * Handle response.
      *
-     * @throws UnprocessableEntityException If something your your request was wrong.
      * @throws UnauthorizedException If token missed or invalid.
+     * @throws UnprocessableEntityException If something your your request was wrong.
      * @throws UnknownResponseException If API returns unknown HTTP status code.
      *
      * @return CategoryEntity If response was successful.
@@ -32,12 +32,12 @@ class CreateCategoryAction extends AbstractAction
 
                 return $entity;
 
+            case 401:
+                throw new UnauthorizedException();
+
             case 422:
                 $data = $this->decodeResponse();
                 throw new UnprocessableEntityException($data['message']);
-
-            case 401:
-                throw new UnauthorizedException();
 
             default:
                 throw new UnknownResponseException();

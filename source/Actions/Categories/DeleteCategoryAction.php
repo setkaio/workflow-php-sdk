@@ -15,8 +15,8 @@ class DeleteCategoryAction extends AbstractAction
     /**
      * Handle response.
      *
-     * @throws NotFoundException If category not found.
      * @throws UnauthorizedException If token missed or invalid.
+     * @throws NotFoundException If category not found.
      * @throws UnknownResponseException If API returns unknown HTTP status code.
      *
      * @return CategoryEntity If response was successful.
@@ -33,11 +33,11 @@ class DeleteCategoryAction extends AbstractAction
 
                 return $entity;
 
-            case 404:
-                throw new NotFoundException();
-
             case 401:
                 throw new UnauthorizedException();
+
+            case 404:
+                throw new NotFoundException();
 
             default:
                 throw new UnknownResponseException();
