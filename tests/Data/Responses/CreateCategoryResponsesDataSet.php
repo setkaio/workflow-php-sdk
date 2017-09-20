@@ -74,18 +74,6 @@ class CreateCategoryResponsesDataSet extends AbstractAssociativeDataSet
         $variants['2.3'] = array(
             array(
                 'space' => 'test-space',
-                'name'  => 'Test Name',
-            ),
-            array(
-                'http_code' => 401,
-                'http_body' => array(),
-                'handle_expect' => UnauthorizedException::class,
-            ),
-        );
-
-        $variants['2.4'] = array(
-            array(
-                'space' => 'test-space',
                 'token' => null,
                 'name'  => 'Test Name',
             ),
@@ -96,7 +84,7 @@ class CreateCategoryResponsesDataSet extends AbstractAssociativeDataSet
             ),
         );
 
-        $variants['2.5'] = array(
+        $variants['2.4'] = array(
             array(
                 'space' => 'test-space',
                 'token' => 123,

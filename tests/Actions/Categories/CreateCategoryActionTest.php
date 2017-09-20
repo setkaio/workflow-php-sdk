@@ -9,6 +9,7 @@ use Setka\WorkflowSDK\API;
 use Setka\WorkflowSDK\AuthCredits;
 use Setka\WorkflowSDK\ClientFactory;
 use Setka\WorkflowSDK\Tests\Data\Endpoints;
+use Setka\WorkflowSDK\Tests\Data\Responses\CreateCategoryResponsesDataSet;
 
 class CreateCategoryActionTest extends TestCase
 {
@@ -79,12 +80,12 @@ class CreateCategoryActionTest extends TestCase
         $this->assertTrue(is_a($entity, $responseDetails['handle_expect']));
 
         if(!is_a($entity, \Exception::class)) {
-            $this->assertEquals($responseDetails['name'], $entity->getName());
+            $this->assertEquals($responseDetails['http_body']['name'], $entity->getName());
         }
     }
 
     public function casesRequest()
     {
-        return new CreateCategoryActionTest();
+        return new CreateCategoryResponsesDataSet();
     }
 }
