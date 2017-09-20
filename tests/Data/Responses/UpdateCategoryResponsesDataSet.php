@@ -17,6 +17,7 @@ class UpdateCategoryResponsesDataSet extends AbstractAssociativeDataSet
                 'space' => 'test-space',
                 'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'name'  => 'Test Name',
+                'id' => '123456',
             ),
             array(
                 'http_code' => 200,
@@ -33,6 +34,7 @@ class UpdateCategoryResponsesDataSet extends AbstractAssociativeDataSet
                 'space' => 'test-space',
                 'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'name'  => '',
+                'id' => '123456',
             ),
             array(
                 'http_code' => 422,
@@ -48,6 +50,7 @@ class UpdateCategoryResponsesDataSet extends AbstractAssociativeDataSet
                 'space' => '',
                 'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'name'  => 'Test Name',
+                'id' => '123456',
             ),
             array(
                 'http_code' => 422,
@@ -63,6 +66,7 @@ class UpdateCategoryResponsesDataSet extends AbstractAssociativeDataSet
                 'space' => 'test-space',
                 'token' => '',
                 'name'  => 'Test Name',
+                'id' => '123456',
             ),
             array(
                 'http_code' => 401,
@@ -76,6 +80,7 @@ class UpdateCategoryResponsesDataSet extends AbstractAssociativeDataSet
                 'space' => 'test-space',
                 'token' => null,
                 'name'  => 'Test Name',
+                'id' => '123456',
             ),
             array(
                 'http_code' => 401,
@@ -89,6 +94,7 @@ class UpdateCategoryResponsesDataSet extends AbstractAssociativeDataSet
                 'space' => 'test-space',
                 'token' => 123,
                 'name'  => 'Test Name',
+                'id' => '123456',
             ),
             array(
                 'http_code' => 401,
