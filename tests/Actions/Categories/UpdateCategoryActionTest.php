@@ -8,7 +8,7 @@ use Setka\WorkflowSDK\Actions\Categories\UpdateCategoryAction;
 use Setka\WorkflowSDK\API;
 use Setka\WorkflowSDK\AuthCredits;
 use Setka\WorkflowSDK\Tests\Data\Endpoints;
-use Setka\WorkflowSDK\Tests\Data\Responses\UpdateCategoryResponsesDataSet;
+use Setka\WorkflowSDK\Tests\Data\Responses\UpdateCategoryDataSet;
 use Setka\WorkflowSDK\Tests\LocalHandler;
 
 class UpdateCategoryActionTest extends TestCase
@@ -88,6 +88,6 @@ class UpdateCategoryActionTest extends TestCase
 
     public function casesRequest()
     {
-        return new UpdateCategoryResponsesDataSet();
+        return new UpdateCategoryDataSet();
     }
 }
