@@ -12,7 +12,8 @@ class AbstractAssociativeDataSet implements \Iterator
     protected $variants;
 
     /**
-     * @inheritDoc
+     * @inheritdoc
+     * @return void
      */
     public function rewind()
     {
@@ -21,6 +22,7 @@ class AbstractAssociativeDataSet implements \Iterator
 
     /**
      * @inheritdoc
+     * @return mixed Can return any type.
      */
     public function current()
     {
@@ -29,6 +31,7 @@ class AbstractAssociativeDataSet implements \Iterator
 
     /**
      * @inheritdoc
+     * @return mixed scalar on success, or null on failure.
      */
     public function key()
     {
@@ -37,6 +40,7 @@ class AbstractAssociativeDataSet implements \Iterator
 
     /**
      * @inheritdoc
+     * @return void Any returned value is ignored.
      */
     public function next()
     {
@@ -45,6 +49,7 @@ class AbstractAssociativeDataSet implements \Iterator
 
     /**
      * @inheritdoc
+     * @return boolean The return value will be casted to boolean and then evaluated.
      */
     public function valid()
     {

@@ -9,6 +9,11 @@ use Setka\WorkflowSDK\ClientFactory;
  */
 class ClientFactoryTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * Test creating method.
+     *
+     * @return void
+     */
     public function testCreate()
     {
         $a = ClientFactory::create();

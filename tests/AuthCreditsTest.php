@@ -8,6 +8,10 @@ use Setka\WorkflowSDK\AuthCredits;
  */
 class AuthCreditsTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * Test constructor.
+     * @return void
+     */
     public function testConstruct()
     {
         $a = new AuthCredits('TOKEN');

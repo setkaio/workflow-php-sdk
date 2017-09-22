@@ -30,6 +30,9 @@ class UpdateTicketActionTest extends \PHPUnit_Framework_TestCase
      */
     protected $handler;
 
+    /**
+     * @return void
+     */
     public function setUp()
     {
         $this->api = new API();
@@ -47,12 +50,15 @@ class UpdateTicketActionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     *
+     * @param requestDetails array Request Details.
+     * @param $responseDetails array
+     *
      * @dataProvider casesRequest
      *
-     * @param $requestDetails array
-     * @param $responseDetails array
+     * @return void
      */
-    public function testRequest($requestDetails, $responseDetails)
+    public function testRequest(array $requestDetails, array $responseDetails)
     {
         $this->api->getAuth()->setToken($requestDetails['token']);
 
@@ -96,6 +102,9 @@ class UpdateTicketActionTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+    /**
+     * @return UpdateTicketDataSet
+     */
     public function casesRequest()
     {
         return new UpdateTicketDataSet();

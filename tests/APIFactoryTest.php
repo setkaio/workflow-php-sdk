@@ -12,6 +12,11 @@ use Setka\WorkflowSDK\ClientFactory;
  */
 class APIFactoryTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * Test create.
+     *
+     * @return void
+     */
     public function testCreate()
     {
         $a = APIFactory::create('TOKEN');
