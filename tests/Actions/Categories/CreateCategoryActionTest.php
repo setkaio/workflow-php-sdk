@@ -8,7 +8,7 @@ use Setka\WorkflowSDK\Actions\Categories\CreateCategoryAction;
 use Setka\WorkflowSDK\API;
 use Setka\WorkflowSDK\AuthCredits;
 use Setka\WorkflowSDK\Tests\Data\Endpoints;
-use Setka\WorkflowSDK\Tests\Data\Responses\CreateCategoryResponsesDataSet;
+use Setka\WorkflowSDK\Tests\Data\Responses\CreateCategoryDataSet;
 
 class CreateCategoryActionTest extends TestCase
 {
@@ -86,6 +86,6 @@ class CreateCategoryActionTest extends TestCase
 
     public function casesRequest()
     {
-        return new CreateCategoryResponsesDataSet();
+        return new CreateCategoryDataSet();
     }
 }
