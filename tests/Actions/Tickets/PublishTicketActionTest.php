@@ -63,7 +63,11 @@ class PublishTicketActionTest extends TestCase
         ));
 
         // Prepare response
-        $response = new Response($responseDetails['http_code'], array(), \GuzzleHttp\json_encode($responseDetails['http_body']));
+        $response = new Response(
+            $responseDetails['http_code'],
+            array(),
+            \GuzzleHttp\json_encode($responseDetails['http_body'])
+        );
         $this->handler->setResponse($response);
 
         // Save details and make request
@@ -78,7 +82,7 @@ class PublishTicketActionTest extends TestCase
 
         $this->assertTrue(is_a($entity, $responseDetails['handle_expect']));
 
-        if(!is_a($entity, \Exception::class)) {
+        if (!is_a($entity, \Exception::class)) {
             $this->assertEquals($responseDetails['http_body']['id'], $entity->getId());
             $this->assertEquals($responseDetails['http_body']['title'], $entity->getTitle());
             $this->assertEquals($responseDetails['http_body']['category_id'], $entity->getCategoryId());

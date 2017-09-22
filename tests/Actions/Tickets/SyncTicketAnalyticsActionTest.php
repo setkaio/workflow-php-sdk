@@ -63,7 +63,11 @@ class SyncTicketAnalyticsActionTest extends \PHPUnit_Framework_TestCase
         ));
 
         // Prepare response
-        $response = new Response($responseDetails['http_code'], array(), \GuzzleHttp\json_encode($responseDetails['http_body']));
+        $response = new Response(
+            $responseDetails['http_code'],
+            array(),
+            \GuzzleHttp\json_encode($responseDetails['http_body'])
+        );
         $this->handler->setResponse($response);
 
         // Save details and make request
@@ -76,19 +80,27 @@ class SyncTicketAnalyticsActionTest extends \PHPUnit_Framework_TestCase
             $entities = $exception;
         }
 
-        if(is_a($entities, \Exception::class)) {
+        if (is_a($entities, \Exception::class)) {
             $this->assertTrue(is_a($entities, $responseDetails['handle_expect']));
         } else {
             $this->assertTrue(is_array($entities));
             $this->assertNotEmpty($entities);
 
-            foreach($entities as $entityKey => $entityValue)
-            {
+            foreach ($entities as $entityKey => $entityValue) {
                 $this->assertTrue(is_a($entityValue, $responseDetails['handle_expect']));
 
-                $this->assertEquals($responseDetails['http_body'][$entityKey]['id'], $entityValue->getId());
-                $this->assertEquals($responseDetails['http_body'][$entityKey]['views_count'], $entityValue->getViewsCount());
-                $this->assertEquals($responseDetails['http_body'][$entityKey]['comments_count'], $entityValue->getCommentsCount());
+                $this->assertEquals(
+                    $responseDetails['http_body'][$entityKey]['id'],
+                    $entityValue->getId()
+                );
+                $this->assertEquals(
+                    $responseDetails['http_body'][$entityKey]['views_count'],
+                    $entityValue->getViewsCount()
+                );
+                $this->assertEquals(
+                    $responseDetails['http_body'][$entityKey]['comments_count'],
+                    $entityValue->getCommentsCount()
+                );
             }
         }
     }

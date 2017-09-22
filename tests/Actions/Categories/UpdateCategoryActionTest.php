@@ -65,7 +65,11 @@ class UpdateCategoryActionTest extends TestCase
         ));
 
         // Prepare response
-        $response = new Response($responseDetails['http_code'], array(), \GuzzleHttp\json_encode($responseDetails['http_body']));
+        $response = new Response(
+            $responseDetails['http_code'],
+            array(),
+            \GuzzleHttp\json_encode($responseDetails['http_body'])
+        );
         $this->handler->setResponse($response);
 
         // Save details and make request
@@ -80,7 +84,7 @@ class UpdateCategoryActionTest extends TestCase
 
         $this->assertTrue(is_a($entity, $responseDetails['handle_expect']));
 
-        if(!is_a($entity, \Exception::class)) {
+        if (!is_a($entity, \Exception::class)) {
             $this->assertEquals($responseDetails['http_body']['id'], $entity->getId());
             $this->assertEquals($responseDetails['http_body']['name'], $entity->getName());
         }
