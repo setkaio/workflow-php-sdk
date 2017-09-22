@@ -33,7 +33,7 @@ class PublishTicketAction extends AbstractAction
         switch ($this->getResponse()->getStatusCode()) {
             case 200:
                 $entity = new TicketEntity();
-                $data = $this->decodeResponse();
+                $data   = $this->decodeResponse();
                 $entity
                     ->setId($data['id'])
                     ->setTitle($data['title'])

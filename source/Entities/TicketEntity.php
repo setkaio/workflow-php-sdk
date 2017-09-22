@@ -67,9 +67,9 @@ class TicketEntity extends AbstractEntity
         $viewsCount = null,
         $commentsCount = null
     ) {
-        $this->title         = $title;
-        $this->categoryId    = $categoryId;
-        $this->state         = $state;
+        $this->title      = $title;
+        $this->categoryId = $categoryId;
+        $this->state      = $state;
 
         if (is_a($publishedAt, \DateTime::class)) {
             $this->publishedAt = $publishedAt;
@@ -79,8 +79,8 @@ class TicketEntity extends AbstractEntity
 
         $this->viewPostUrl   = $viewPostUrl;
         $this->editPostUrl   = $editPostUrl;
-        $this->viewsCount    = (int)$viewsCount;
-        $this->commentsCount = (int)$commentsCount;
+        $this->viewsCount    = (int) $viewsCount;
+        $this->commentsCount = (int) $commentsCount;
     }
 
 

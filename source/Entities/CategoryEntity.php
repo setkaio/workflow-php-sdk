@@ -16,7 +16,7 @@ class CategoryEntity extends AbstractEntity
      */
     public function __construct($id = null, $name = null)
     {
-        $this->id = $id;
+        $this->id   = $id;
         $this->name = $name;
     }
 
@@ -34,7 +34,7 @@ class CategoryEntity extends AbstractEntity
     /**
      * Setup name of category.
      *
-     * @param string $name Name of category.
+     * @param string $name  Name of category.
      * @return $this For chain calls.
      */
     public function setName($name)

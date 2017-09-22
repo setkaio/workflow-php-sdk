@@ -8,5 +8,17 @@
 	<arg name="colors"/>
 
 	<rule ref="PSR2"/>
-	<rule ref="Squiz"/>
+	<rule ref="Generic.Arrays.DisallowShortArraySyntax"/>
+    <rule ref="Generic.Classes.DuplicateClassName"/>
+    <!--<rule ref="Generic.Commenting"/>-->
+    <rule ref="Generic.ControlStructures"/>
+    <rule ref="Generic.Debug"/>
+    <rule ref="Generic.Files">
+        <exclude name="Generic.Files.EndFileNoNewline"/>
+        <exclude name="Generic.Files.LowercasedFilename"/>
+    </rule>
+    <rule ref="Generic.Formatting">
+        <exclude name="Generic.Formatting.NoSpaceAfterCast"/>
+        <exclude name="Generic.Formatting.SpaceAfterNot"/>
+    </rule>
 </ruleset>

@@ -33,8 +33,7 @@ class UpdateTicketActionTest extends \PHPUnit_Framework_TestCase
         $this->api->setAuth(new AuthCredits(''));
 
         $this->handler = new LocalHandler();
-
-        $client = new Client(array(
+        $client        = new Client(array(
             'base_uri' => Endpoints::TEST_API,
             'handler' => $this->handler,
         ));

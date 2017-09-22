@@ -30,7 +30,7 @@ class SyncTicketAnalyticsAction extends AbstractAction
     {
         switch ($this->getResponse()->getStatusCode()) {
             case 200:
-                $data = $this->decodeResponse();
+                $data     = $this->decodeResponse();
                 $entities = array();
 
                 foreach ($data as $a) {

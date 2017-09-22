@@ -31,7 +31,7 @@ class CreateCategoryAction extends AbstractAction
         switch ($this->getResponse()->getStatusCode()) {
             case 200:
                 $entity = new CategoryEntity();
-                $data = $this->decodeResponse();
+                $data   = $this->decodeResponse();
                 $entity
                     ->setId($data['id'])
                     ->setName($data['name']);
