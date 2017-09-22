@@ -95,7 +95,7 @@ interface ActionInterface
     /**
      * Returns auto generated URL to send request.
      *
-     * Details for creating URL. You need to setup $this->details before using this method.
+     * You need to setup $this->details before using this method.
      *
      * @return string URL which used to request.
      */
