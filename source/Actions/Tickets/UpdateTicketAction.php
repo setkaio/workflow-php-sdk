@@ -30,12 +30,28 @@ class UpdateTicketAction extends AbstractAction
     public function configureDetails(array $options)
     {
         $resolver = new OptionsResolver();
+
         $resolver->setRequired(array('space', 'id', 'body'));
 
         $options = $resolver->resolve($options);
 
         $resolver = new OptionsResolver();
-        $resolver->setDefined(array('title', 'state', 'category_id', 'published_at', 'view_post_url', 'edit_post_url', 'views_count', 'comments_count'));
+
+        // Allow default ticket fields.
+        $resolver->setDefined(array(
+            'title',
+            'state',
+            'category_id',
+            'published_at',
+            'view_post_url',
+            'edit_post_url',
+            'views_count',
+            'comments_count',
+        ));
+        // Allow any extra fields which can be added in future releases.
+        $resolver->setDefined(array_keys($options['body']));
+
+        // Token for authorization
         $resolver->setDefault('token', $this->getApi()->getAuth()->getToken());
 
         $options['body'] = $resolver->resolve($options['body']);
