@@ -48,10 +48,11 @@ class UpdateTicketAction extends AbstractAction
             'views_count',
             'comments_count',
         ));
+
         // Allow any extra fields which can be added in future releases.
         $resolver->setDefined(array_keys($options['body']));
 
-        // Token for authorization
+        // Token for authorization.
         $resolver->setDefault('token', $this->getApi()->getAuth()->getToken());
 
         $options['body'] = $resolver->resolve($options['body']);

@@ -72,12 +72,20 @@ class UpdateCategoryAction extends AbstractAction
     public function configureDetails(array $options)
     {
         $resolver = new OptionsResolver();
+
         $resolver->setRequired(array('space', 'id', 'body'));
 
         $options = $resolver->resolve($options);
 
         $resolver = new OptionsResolver();
+
+        // Allow default category fields.
         $resolver->setRequired('name');
+
+        // Allow any extra fields which can be added in future releases.
+        $resolver->setDefined(array_keys($options['body']));
+
+        // Token for authorization.
         $resolver->setDefault('token', $this->getApi()->getAuth()->getToken());
 
         $options['body'] = $resolver->resolve($options['body']);
