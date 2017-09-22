@@ -21,8 +21,9 @@ class APIFactory
 
         $api->setAuth(new AuthCredits($token));
 
-        if(!$client)
+        if (!$client) {
             $client = ClientFactory::create();
+        }
 
         $api->setClient($client);
 

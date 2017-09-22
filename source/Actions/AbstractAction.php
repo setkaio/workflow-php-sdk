@@ -42,7 +42,9 @@ abstract class AbstractAction implements ActionInterface
      *
      * Used to configure instance without rewriting construct method.
      */
-    public function lateConstruct() {}
+    public function lateConstruct()
+    {
+    }
 
     /**
      * @inheritdoc

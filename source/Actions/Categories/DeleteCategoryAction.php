@@ -29,7 +29,7 @@ class DeleteCategoryAction extends AbstractAction
      */
     public function handleResponse()
     {
-        switch($this->getResponse()->getStatusCode()) {
+        switch ($this->getResponse()->getStatusCode()) {
             case 200:
                 $entity = new CategoryEntity();
                 $data = $this->decodeResponse();

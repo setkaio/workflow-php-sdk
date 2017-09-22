@@ -28,13 +28,12 @@ class SyncTicketAnalyticsAction extends AbstractAction
      */
     public function handleResponse()
     {
-        switch($this->getResponse()->getStatusCode()) {
+        switch ($this->getResponse()->getStatusCode()) {
             case 200:
                 $data = $this->decodeResponse();
                 $entities = array();
 
-                foreach($data as $a)
-                {
+                foreach ($data as $a) {
                     $b = new TicketEntity();
                     $b
                         ->setId($a['id'])

@@ -71,7 +71,7 @@ class TicketEntity extends AbstractEntity
         $this->categoryId    = $categoryId;
         $this->state         = $state;
 
-        if(is_a($publishedAt, \DateTime::class)) {
+        if (is_a($publishedAt, \DateTime::class)) {
             $this->publishedAt = $publishedAt;
         } else {
             $this->publishedAt = new \DateTime($publishedAt);
