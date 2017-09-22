@@ -34,7 +34,7 @@ class CategoryEntity extends AbstractEntity
     /**
      * Setup name of category.
      *
-     * @param string $name  Name of category.
+     * @param string $name Name of category.
      * @return $this For chain calls.
      */
     public function setName($name)

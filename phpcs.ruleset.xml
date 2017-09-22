@@ -10,7 +10,9 @@
 	<rule ref="PSR2"/>
 	<rule ref="Generic.Arrays.DisallowShortArraySyntax"/>
     <rule ref="Generic.Classes.DuplicateClassName"/>
-    <!--<rule ref="Generic.Commenting"/>-->
+    <rule ref="Generic.Commenting">
+        <exclude name="Generic.Commenting.DocComment"/>
+    </rule>
     <rule ref="Generic.ControlStructures"/>
     <rule ref="Generic.Debug"/>
     <rule ref="Generic.Files">
@@ -21,4 +23,13 @@
         <exclude name="Generic.Formatting.NoSpaceAfterCast"/>
         <exclude name="Generic.Formatting.SpaceAfterNot"/>
     </rule>
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
+    <rule ref="Generic.Metrics"/>
+    <rule ref="Generic.NamingConventions"/>
+    <rule ref="Generic.PHP">
+        <exclude name="Generic.PHP.ClosingPHPTag"/>
+        <exclude name="Generic.PHP.UpperCaseConstant"/>
+    </rule>
+    <rule ref="Generic.Strings"/>
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
 </ruleset>
