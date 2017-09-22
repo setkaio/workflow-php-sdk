@@ -4,6 +4,9 @@ namespace Setka\WorkflowSDK\Tests;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\RequestInterface;
 
+/**
+ * Class LocalHandler
+ */
 class LocalHandler
 {
     /**
@@ -11,6 +14,12 @@ class LocalHandler
      */
     protected $response;
 
+    /**
+     * @param RequestInterface $request HTTP Request instance.
+     * @param array            $options Additional options with request.
+     *
+     * @return Response HTTP Response instance.
+     */
     public function __invoke(RequestInterface $request, array $options)
     {
         return $this->getResponse();
@@ -25,7 +34,7 @@ class LocalHandler
     }
 
     /**
-     * @param Response $response
+     * @param Response $response HTTP Response instance.
      *
      * @return $this
      */

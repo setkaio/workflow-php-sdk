@@ -10,6 +10,9 @@ use Setka\WorkflowSDK\Exceptions\UnknownResponseException;
 use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class UpdateCategoryAction
+ */
 class UpdateCategoryAction extends AbstractAction
 {
     /**
@@ -52,7 +55,7 @@ class UpdateCategoryAction extends AbstractAction
 
             default:
                 throw new UnknownResponseException();
-        }
+        }//end switch
     }
 
     /**

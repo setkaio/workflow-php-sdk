@@ -3,6 +3,9 @@ namespace Setka\WorkflowSDK\Tests;
 
 use Setka\WorkflowSDK\AuthCredits;
 
+/**
+ * Class AuthCreditsTest
+ */
 class AuthCreditsTest extends \PHPUnit_Framework_TestCase
 {
     public function testConstruct()

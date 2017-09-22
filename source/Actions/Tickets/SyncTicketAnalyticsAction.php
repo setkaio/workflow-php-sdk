@@ -9,6 +9,9 @@ use Setka\WorkflowSDK\Exceptions\UnknownResponseException;
 use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class SyncTicketAnalyticsAction
+ */
 class SyncTicketAnalyticsAction extends AbstractAction
 {
     /**
@@ -55,7 +58,7 @@ class SyncTicketAnalyticsAction extends AbstractAction
 
             default:
                 throw new UnknownResponseException();
-        }
+        }//end switch
     }
 
     /**

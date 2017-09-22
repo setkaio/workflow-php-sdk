@@ -1,6 +1,9 @@
 <?php
 namespace Setka\WorkflowSDK\Entities;
 
+/**
+ * Class TicketEntity
+ */
 class TicketEntity extends AbstractEntity
 {
     /**

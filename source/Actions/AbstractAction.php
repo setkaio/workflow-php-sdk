@@ -4,6 +4,9 @@ namespace Setka\WorkflowSDK\Actions;
 use Psr\Http\Message\ResponseInterface;
 use Setka\WorkflowSDK\API;
 
+/**
+ * Class AbstractAction
+ */
 abstract class AbstractAction implements ActionInterface
 {
     /**

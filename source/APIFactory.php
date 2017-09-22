@@ -3,6 +3,9 @@ namespace Setka\WorkflowSDK;
 
 use GuzzleHttp\ClientInterface;
 
+/**
+ * Class APIFactory
+ */
 class APIFactory
 {
     /**

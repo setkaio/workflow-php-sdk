@@ -10,6 +10,9 @@ use Setka\WorkflowSDK\Tests\Data\Endpoints;
 use Setka\WorkflowSDK\Tests\Data\Responses\SyncTicketAnalyticsDataSet;
 use Setka\WorkflowSDK\Tests\LocalHandler;
 
+/**
+ * Class SyncTicketAnalyticsActionTest
+ */
 class SyncTicketAnalyticsActionTest extends \PHPUnit_Framework_TestCase
 {
     /**
@@ -54,7 +57,7 @@ class SyncTicketAnalyticsActionTest extends \PHPUnit_Framework_TestCase
     {
         $this->api->getAuth()->setToken($requestDetails['token']);
 
-        // Prepare action
+        // Prepare action.
         $details = $this->stub->configureDetails(array(
             'space' => $requestDetails['space'],
             'body' => array(
@@ -62,7 +65,7 @@ class SyncTicketAnalyticsActionTest extends \PHPUnit_Framework_TestCase
             ),
         ));
 
-        // Prepare response
+        // Prepare response.
         $response = new Response(
             $responseDetails['http_code'],
             array(),
@@ -70,7 +73,7 @@ class SyncTicketAnalyticsActionTest extends \PHPUnit_Framework_TestCase
         );
         $this->handler->setResponse($response);
 
-        // Save details and make request
+        // Save details and make request.
         try {
             $entities = $this->stub
                 ->setDetails($details)
@@ -102,7 +105,7 @@ class SyncTicketAnalyticsActionTest extends \PHPUnit_Framework_TestCase
                     $entityValue->getCommentsCount()
                 );
             }
-        }
+        }//end if
     }
 
     public function casesRequest()

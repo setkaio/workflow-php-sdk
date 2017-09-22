@@ -4,6 +4,9 @@ namespace Setka\WorkflowSDK\Tests;
 use GuzzleHttp\Client;
 use Setka\WorkflowSDK\ClientFactory;
 
+/**
+ * Class ClientFactoryTest
+ */
 class ClientFactoryTest extends \PHPUnit_Framework_TestCase
 {
     public function testCreate()

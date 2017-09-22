@@ -10,6 +10,9 @@ use Setka\WorkflowSDK\Exceptions\UnknownResponseException;
 use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class DeleteCategoryAction
+ */
 class DeleteCategoryAction extends AbstractAction
 {
     /**

@@ -1,6 +1,9 @@
 <?php
 namespace Setka\WorkflowSDK;
 
+/**
+ * Class Endpoints
+ */
 class Endpoints
 {
     const API = 'https://workflow.setka.io/';

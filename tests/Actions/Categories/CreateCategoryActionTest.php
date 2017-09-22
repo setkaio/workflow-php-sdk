@@ -10,6 +10,9 @@ use Setka\WorkflowSDK\AuthCredits;
 use Setka\WorkflowSDK\Tests\Data\Endpoints;
 use Setka\WorkflowSDK\Tests\Data\Responses\CreateCategoryDataSet;
 
+/**
+ * Class CreateCategoryActionTest
+ */
 class CreateCategoryActionTest extends TestCase
 {
     /**
@@ -54,7 +57,7 @@ class CreateCategoryActionTest extends TestCase
     {
         $this->api->getAuth()->setToken($requestDetails['token']);
 
-        // Prepare action
+        // Prepare action.
         $details = $this->stub->configureDetails(array(
             'space' => $requestDetails['space'],
             'body' => array(
@@ -62,7 +65,7 @@ class CreateCategoryActionTest extends TestCase
             ),
         ));
 
-        // Prepare response
+        // Prepare response.
         $response = new Response(
             $responseDetails['http_code'],
             array(),
@@ -70,7 +73,7 @@ class CreateCategoryActionTest extends TestCase
         );
         $this->handler->setResponse($response);
 
-        // Save details and make request
+        // Save details and make request.
         try {
             $entity = $this->stub
                 ->setDetails($details)

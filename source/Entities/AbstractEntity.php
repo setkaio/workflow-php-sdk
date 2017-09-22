@@ -1,6 +1,9 @@
 <?php
 namespace Setka\WorkflowSDK\Entities;
 
+/**
+ * Class AbstractEntity
+ */
 abstract class AbstractEntity implements EntityInterface
 {
     /**

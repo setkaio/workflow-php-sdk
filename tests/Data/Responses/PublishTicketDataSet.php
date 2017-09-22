@@ -4,8 +4,14 @@ namespace Setka\WorkflowSDK\Tests\Data\Responses;
 use Setka\WorkflowSDK\Entities\TicketEntity;
 use Setka\WorkflowSDK\Tests\Data\AbstractAssociativeDataSet;
 
+/**
+ * Class PublishTicketDataSet
+ */
 class PublishTicketDataSet extends AbstractAssociativeDataSet
 {
+    /**
+     * PublishTicketDataSet constructor.
+     */
     public function __construct()
     {
         $variants = array();

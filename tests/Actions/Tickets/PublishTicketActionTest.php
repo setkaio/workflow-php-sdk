@@ -11,6 +11,9 @@ use Setka\WorkflowSDK\Tests\Data\Endpoints;
 use Setka\WorkflowSDK\Tests\Data\Responses\PublishTicketDataSet;
 use Setka\WorkflowSDK\Tests\LocalHandler;
 
+/**
+ * Class PublishTicketActionTest
+ */
 class PublishTicketActionTest extends TestCase
 {
     /**
@@ -55,14 +58,14 @@ class PublishTicketActionTest extends TestCase
     {
         $this->api->getAuth()->setToken($requestDetails['token']);
 
-        // Prepare action
+        // Prepare action.
         $details = $this->stub->configureDetails(array(
             'space' => $requestDetails['space'],
             'body' => array(),
             'id' => $requestDetails['id'],
         ));
 
-        // Prepare response
+        // Prepare response.
         $response = new Response(
             $responseDetails['http_code'],
             array(),
@@ -70,7 +73,7 @@ class PublishTicketActionTest extends TestCase
         );
         $this->handler->setResponse($response);
 
-        // Save details and make request
+        // Save details and make request.
         try {
             $entity = $this->stub
                 ->setDetails($details)

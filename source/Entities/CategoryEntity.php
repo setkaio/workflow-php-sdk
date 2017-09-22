@@ -1,6 +1,9 @@
 <?php
 namespace Setka\WorkflowSDK\Entities;
 
+/**
+ * Class CategoryEntity
+ */
 class CategoryEntity extends AbstractEntity
 {
     /**

@@ -6,8 +6,14 @@ use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
 use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 use Setka\WorkflowSDK\Tests\Data\AbstractAssociativeDataSet;
 
+/**
+ * Class CreateCategoryDataSet
+ */
 class CreateCategoryDataSet extends AbstractAssociativeDataSet
 {
+    /**
+     * CreateCategoryDataSet constructor.
+     */
     public function __construct()
     {
         $variants = array();

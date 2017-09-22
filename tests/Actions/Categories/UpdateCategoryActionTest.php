@@ -11,6 +11,9 @@ use Setka\WorkflowSDK\Tests\Data\Endpoints;
 use Setka\WorkflowSDK\Tests\Data\Responses\UpdateCategoryDataSet;
 use Setka\WorkflowSDK\Tests\LocalHandler;
 
+/**
+ * Class UpdateCategoryActionTest
+ */
 class UpdateCategoryActionTest extends TestCase
 {
     /**
@@ -55,7 +58,7 @@ class UpdateCategoryActionTest extends TestCase
     {
         $this->api->getAuth()->setToken($requestDetails['token']);
 
-        // Prepare action
+        // Prepare action.
         $details = $this->stub->configureDetails(array(
             'space' => $requestDetails['space'],
             'body' => array(
@@ -64,7 +67,7 @@ class UpdateCategoryActionTest extends TestCase
             'id' => $requestDetails['id'],
         ));
 
-        // Prepare response
+        // Prepare response.
         $response = new Response(
             $responseDetails['http_code'],
             array(),
@@ -72,7 +75,7 @@ class UpdateCategoryActionTest extends TestCase
         );
         $this->handler->setResponse($response);
 
-        // Save details and make request
+        // Save details and make request.
         try {
             $entity = $this->stub
                 ->setDetails($details)

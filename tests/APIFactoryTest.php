@@ -7,6 +7,9 @@ use Setka\WorkflowSDK\APIFactory;
 use Setka\WorkflowSDK\AuthCredits;
 use Setka\WorkflowSDK\ClientFactory;
 
+/**
+ * Class APIFactoryTest
+ */
 class APIFactoryTest extends \PHPUnit_Framework_TestCase
 {
     public function testCreate()

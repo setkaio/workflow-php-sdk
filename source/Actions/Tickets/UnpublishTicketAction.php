@@ -10,6 +10,9 @@ use Setka\WorkflowSDK\Exceptions\UnknownResponseException;
 use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class UnpublishTicketAction
+ */
 class UnpublishTicketAction extends AbstractAction
 {
     /**
@@ -59,7 +62,7 @@ class UnpublishTicketAction extends AbstractAction
 
             default:
                 throw new UnknownResponseException();
-        }
+        }//end switch
     }
 
     /**

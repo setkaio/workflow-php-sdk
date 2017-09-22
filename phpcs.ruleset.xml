@@ -32,4 +32,11 @@
     </rule>
     <rule ref="Generic.Strings"/>
     <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+
+    <rule ref="Squiz.Classes"/>
+    <rule ref="Squiz.Commenting">
+        <exclude name="Squiz.Commenting.FileComment"/>
+        <exclude name="Squiz.Commenting.ClosingDeclarationComment"/>
+        <exclude name="Squiz.Commenting.FunctionComment"/>
+    </rule>
 </ruleset>

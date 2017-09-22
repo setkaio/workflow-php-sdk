@@ -7,8 +7,14 @@ use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
 use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 use Setka\WorkflowSDK\Tests\Data\AbstractAssociativeDataSet;
 
+/**
+ * Class UnpublishTicketDataSet
+ */
 class UnpublishTicketDataSet extends AbstractAssociativeDataSet
 {
+    /**
+     * UnpublishTicketDataSet constructor.
+     */
     public function __construct()
     {
         $variants = array();

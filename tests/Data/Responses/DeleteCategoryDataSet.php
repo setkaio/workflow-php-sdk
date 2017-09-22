@@ -6,8 +6,14 @@ use Setka\WorkflowSDK\Exceptions\NotFoundException;
 use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
 use Setka\WorkflowSDK\Tests\Data\AbstractAssociativeDataSet;
 
+/**
+ * Class DeleteCategoryDataSet
+ */
 class DeleteCategoryDataSet extends AbstractAssociativeDataSet
 {
+    /**
+     * DeleteCategoryDataSet constructor.
+     */
     public function __construct()
     {
         $variants = array();

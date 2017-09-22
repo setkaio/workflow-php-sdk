@@ -1,6 +1,9 @@
 <?php
 namespace Setka\WorkflowSDK;
 
+/**
+ * Class AuthCredits
+ */
 class AuthCredits
 {
     /**
