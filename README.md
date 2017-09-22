@@ -36,3 +36,12 @@ try {
 
 // If no exception was throwed then request was successful and you can use $entity object.
 ```
+
+## Contributing
+
+To run PHP Code Sniffer run the following commands.
+
+```bash
+composer install
+vendor/bin/phpcs --standard=phpcs.ruleset.xml
+```
