@@ -7,7 +7,7 @@ use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
 use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 use Setka\WorkflowSDK\Tests\Data\AbstractAssociativeDataSet;
 
-class UnpublishTicketActionDataSet extends AbstractAssociativeDataSet
+class UnpublishTicketDataSet extends AbstractAssociativeDataSet
 {
     public function __construct()
     {

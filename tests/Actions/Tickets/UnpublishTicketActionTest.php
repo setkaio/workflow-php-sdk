@@ -7,7 +7,7 @@ use Setka\WorkflowSDK\Actions\Tickets\UnpublishTicketAction;
 use Setka\WorkflowSDK\API;
 use Setka\WorkflowSDK\AuthCredits;
 use Setka\WorkflowSDK\Tests\Data\Endpoints;
-use Setka\WorkflowSDK\Tests\Data\Responses\UnpublishTicketActionDataSet;
+use Setka\WorkflowSDK\Tests\Data\Responses\UnpublishTicketDataSet;
 use Setka\WorkflowSDK\Tests\LocalHandler;
 
 class UnpublishTicketActionTest extends \PHPUnit_Framework_TestCase
@@ -92,6 +92,6 @@ class UnpublishTicketActionTest extends \PHPUnit_Framework_TestCase
 
     public function casesRequest()
     {
-        return new UnpublishTicketActionDataSet();
+        return new UnpublishTicketDataSet();
     }
 }
