@@ -9,6 +9,9 @@ use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
 use Setka\WorkflowSDK\Exceptions\UnknownResponseException;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class GetSpace
+ */
 class GetSpace extends AbstractAction
 {
     /**
