@@ -39,4 +39,5 @@
         <exclude name="Squiz.Commenting.ClosingDeclarationComment"/>
         <exclude name="Squiz.Commenting.FunctionComment"/>
     </rule>
+    <!--<rule ref="Squiz.ControlStructures"/>-->
 </ruleset>
