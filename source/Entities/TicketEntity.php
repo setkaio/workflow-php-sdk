@@ -53,7 +53,7 @@ class TicketEntity extends AbstractEntity
      * @param string $title
      * @param string $categoryId
      * @param string $state
-     * @param \DateTime|string $publishedAt
+     * @param \DateTime $publishedAt
      * @param string $viewPostUrl
      * @param string $editPostUrl
      * @param int $viewsCount
@@ -70,16 +70,10 @@ class TicketEntity extends AbstractEntity
         $viewsCount = null,
         $commentsCount = null
     ) {
-        $this->title      = $title;
-        $this->categoryId = $categoryId;
-        $this->state      = $state;
-
-        if (is_a($publishedAt, \DateTime::class)) {
-            $this->publishedAt = $publishedAt;
-        } else {
-            $this->publishedAt = new \DateTime($publishedAt);
-        }
-
+        $this->title         = $title;
+        $this->categoryId    = $categoryId;
+        $this->state         = $state;
+        $this->publishedAt   = $publishedAt;
         $this->viewPostUrl   = $viewPostUrl;
         $this->editPostUrl   = $editPostUrl;
         $this->viewsCount    = (int) $viewsCount;
@@ -157,7 +151,7 @@ class TicketEntity extends AbstractEntity
      *
      * @return $this For chain calls.
      */
-    public function setPublishedAt($publishedAt)
+    public function setPublishedAt(\DateTime $publishedAt)
     {
         $this->publishedAt = $publishedAt;
         return $this;

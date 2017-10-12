@@ -42,11 +42,19 @@ class UnpublishTicketAction extends AbstractAction
                     ->setTitle($data['title'])
                     ->setCategoryId($data['category_id'])
                     ->setState($data['state'])
-                    ->setPublishedAt($data['published_at'])
                     ->setViewPostUrl($data['view_post_url'])
                     ->setEditPostUrl($data['edit_post_url'])
                     ->setViewsCount($data['views_count'])
                     ->setCommentsCount($data['comments_count']);
+
+                if ($data['published_at']) {
+                    $entity->setPublishedAt(
+                        new \DateTime(
+                            $data['published_at'],
+                            new \DateTimeZone('UTC')
+                        )
+                    );
+                }
 
                 return $entity;
 

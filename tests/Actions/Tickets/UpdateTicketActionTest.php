@@ -94,7 +94,13 @@ class UpdateTicketActionTest extends \PHPUnit_Framework_TestCase
             $this->assertEquals($responseDetails['http_body']['title'], $entity->getTitle());
             $this->assertEquals($responseDetails['http_body']['category_id'], $entity->getCategoryId());
             $this->assertEquals($responseDetails['http_body']['state'], $entity->getState());
-            $this->assertEquals($responseDetails['http_body']['published_at'], $entity->getPublishedAt());
+
+            if($responseDetails['http_body']['published_at']) {
+                $this->assertEquals($responseDetails['http_body']['published_at'], $entity->getPublishedAt()->format('Y-m-d G:i:s'));
+            } else {
+                $this->assertNull($entity->getPublishedAt());
+            }
+
             $this->assertEquals($responseDetails['http_body']['view_post_url'], $entity->getViewPostUrl());
             $this->assertEquals($responseDetails['http_body']['edit_post_url'], $entity->getEditPostUrl());
             $this->assertEquals($responseDetails['http_body']['views_count'], $entity->getViewsCount());
