@@ -12,7 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 /**
  * Class GetSpace
  */
-class GetSpace extends AbstractAction
+class GetSpaceAction extends AbstractAction
 {
     /**
      * Handle response.
