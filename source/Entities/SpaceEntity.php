@@ -32,6 +32,33 @@ class SpaceEntity extends AbstractEntity
     protected $updatedAt;
 
     /**
+     * SpaceEntity constructor.
+     *
+     * @param int $id Space ID.
+     * @param string $name Space name.
+     * @param string $shortName Space short name (slug).
+     * @param bool $active Space state.
+     * @param \DateTime $createdAt Space created time.
+     * @param \DateTime $updatedAt Space last modified time.
+     */
+    public function __construct(
+        $id = null,
+        $name = null,
+        $shortName = null,
+        $active = null,
+        \DateTime $createdAt = null,
+        \DateTime $updatedAt = null
+    ) {
+        $this->id        = $id;
+        $this->name      = $name;
+        $this->shortName = $shortName;
+        $this->active    = $active;
+        $this->createdAt = $createdAt;
+        $this->updatedAt = $updatedAt;
+    }
+
+
+    /**
      * Return name of space.
      *
      * @return string Space name.

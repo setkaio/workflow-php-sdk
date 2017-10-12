@@ -39,10 +39,10 @@ class GetSpace extends AbstractAction
                     ->setShortName($data['short_name'])
                     ->setActive($data['active'])
                     ->setCreatedAt(
-                        new \DateTime($data['created_at'], new \DateTimeZone(\DateTimeZone::UTC))
+                        new \DateTime($data['created_at'], new \DateTimeZone('UTC'))
                     )
                     ->setUpdatedAt(
-                        new \DateTime($data['updated_at'], new \DateTimeZone(\DateTimeZone::UTC))
+                        new \DateTime($data['updated_at'], new \DateTimeZone('UTC'))
                     );
 
                 return $entity;
