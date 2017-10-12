@@ -53,7 +53,7 @@ class GetSpaceDataSet extends AbstractAssociativeDataSet
                 'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
             ),
             array(
-                'http_code' => 401,
+                'http_code' => 404,
                 'http_body' => array(),
                 'handle_expect' => NotFoundException::class,
             ),
@@ -64,7 +64,7 @@ class GetSpaceDataSet extends AbstractAssociativeDataSet
                 'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
             ),
             array(
-                'http_code' => 401,
+                'http_code' => 500,
                 'http_body' => array(),
                 'handle_expect' => UnknownResponseException::class,
             ),
