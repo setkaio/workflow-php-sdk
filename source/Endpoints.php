@@ -41,4 +41,9 @@ class Endpoints
      * %2$s - ticket ID
      */
     const TICKET = '/eapi/v3/%1$s/tickets/%2$s.json';
+
+    /**
+     * Get space info for current API key.
+     */
+    const SPACE = '/eapi/v3/space';
 }
