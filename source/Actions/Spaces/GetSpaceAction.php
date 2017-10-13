@@ -74,7 +74,7 @@ class GetSpaceAction extends AbstractAction
      */
     public function getUrl()
     {
-        return Endpoints::SPACE;
+        return sprintf(Endpoints::SPACE, rawurlencode($this->getApi()->getAuth()->getToken()));
     }
 
     public function configureDetails(array $options)
@@ -85,17 +85,17 @@ class GetSpaceAction extends AbstractAction
 
 
         $resolver = new OptionsResolver();
-        $resolver->setRequired('json');
+        //$resolver->setRequired('json');
         // Allow any extra fields which can be added in future releases.
         $resolver->setDefined(array_keys($options['options']));
         $options['options'] = $resolver->resolve($options['options']);
 
 
-        $resolver = new OptionsResolver();
+        /*$resolver = new OptionsResolver();
         // Token for authorization.
         $resolver->setDefault('token', $this->getApi()->getAuth()->getToken());
         $resolver->setDefined(array_keys($options['options']['json']));
-        $options['options']['json'] = $resolver->resolve($options['options']['json']);
+        $options['options']['json'] = $resolver->resolve($options['options']['json']);*/
 
         return $options;
     }

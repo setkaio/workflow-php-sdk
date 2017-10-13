@@ -45,5 +45,5 @@ class Endpoints
     /**
      * Get space info for current API key.
      */
-    const SPACE = '/eapi/v3/space.json';
+    const SPACE = '/eapi/v3/space.json?token=%1$s';
 }
