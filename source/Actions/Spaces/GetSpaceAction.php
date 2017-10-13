@@ -74,7 +74,7 @@ class GetSpaceAction extends AbstractAction
      */
     public function getUrl()
     {
-        return Endpoints::CATEGORY;
+        return Endpoints::SPACE;
     }
 
     public function configureDetails(array $options)
