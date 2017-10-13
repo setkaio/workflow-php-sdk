@@ -55,15 +55,10 @@ class CreateCategoryActionTest extends TestCase
      */
     public function testRequest($requestDetails, $responseDetails)
     {
-        $this->api->getAuth()->setToken($requestDetails['token']);
+        $this->api->getAuth()->setToken($requestDetails['options']['json']['token']);
 
         // Prepare action.
-        $details = $this->stub->configureDetails(array(
-            'space' => $requestDetails['space'],
-            'body' => array(
-                'name' => $requestDetails['name'],
-            ),
-        ));
+        $details = $this->stub->configureDetails($requestDetails);
 
         // Prepare response.
         $response = new Response(

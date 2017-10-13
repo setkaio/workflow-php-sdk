@@ -60,14 +60,12 @@ class UpdateTicketActionTest extends \PHPUnit_Framework_TestCase
      */
     public function testRequest(array $requestDetails, array $responseDetails)
     {
-        $this->api->getAuth()->setToken($requestDetails['token']);
+        $this->api->getAuth()->setToken($requestDetails['options']['json']['token']);
 
         // Prepare action.
-        $details = $this->stub->configureDetails(array(
-            'space' => $requestDetails['space'],
-            'body' => array(),
-            'id' => $requestDetails['id'],
-        ));
+        $details       = $requestDetails;
+        $details['id'] = $requestDetails['options']['json']['id'];
+        $details       = $this->stub->configureDetails($details);
 
         // Prepare response.
         $response = new Response(

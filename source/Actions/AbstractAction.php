@@ -57,10 +57,7 @@ abstract class AbstractAction implements ActionInterface
         $response = $this->getClient()->request(
             $this->getHttpMethod(),
             $this->getUrl(),
-            // TODO: we should pass all options here to allow developers modify the Client's stuff.
-            array(
-                'json' => $this->details['body'],
-            )
+            $this->details['options']
         );
 
         $this->setResponse($response);

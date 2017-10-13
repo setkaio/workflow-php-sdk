@@ -23,17 +23,21 @@ class UpdateTicketDataSet extends AbstractAssociativeDataSet
         $variants['1.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
 
-                'id' => '123456',
-                'title' => 'Test Title',
-                'category_id' => '123',
-                'state' => 'published',
-                'published_at' => '2017-09-04 10:00:00',
-                'view_post_url' => 'https://test-site.com/111/',
-                'edit_post_url' => 'https://test-site.com/admin/edit-post/111/',
-                'views_count' => '100',
-                'comments_count' => '2',
+                        'id' => '123456',
+                        'title' => 'Test Title',
+                        'category_id' => '123',
+                        'state' => 'published',
+                        'published_at' => '2017-09-04 10:00:00',
+                        'view_post_url' => 'https://test-site.com/111/',
+                        'edit_post_url' => 'https://test-site.com/admin/edit-post/111/',
+                        'views_count' => '100',
+                        'comments_count' => '2',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 200,
@@ -55,17 +59,21 @@ class UpdateTicketDataSet extends AbstractAssociativeDataSet
         $variants['2.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => '',
+                'options' => array(
+                    'json' => array(
+                        'token' => '',
 
-                'id' => '123456',
-                'title' => 'Test Title',
-                'category_id' => '123',
-                'state' => 'published',
-                'published_at' => '2017-09-04 10:00:00',
-                'view_post_url' => 'https://test-site.com/111/',
-                'edit_post_url' => 'https://test-site.com/admin/edit-post/111/',
-                'views_count' => '100',
-                'comments_count' => '2',
+                        'id' => '123456',
+                        'title' => 'Test Title',
+                        'category_id' => '123',
+                        'state' => 'published',
+                        'published_at' => '2017-09-04 10:00:00',
+                        'view_post_url' => 'https://test-site.com/111/',
+                        'edit_post_url' => 'https://test-site.com/admin/edit-post/111/',
+                        'views_count' => '100',
+                        'comments_count' => '2',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 401,
@@ -77,17 +85,21 @@ class UpdateTicketDataSet extends AbstractAssociativeDataSet
         $variants['3.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
 
-                'id' => '123456',
-                'title' => 'Test Title',
-                'category_id' => '123',
-                'state' => 'published',
-                'published_at' => '2017-09-04 10:00:00',
-                'view_post_url' => 'https://test-site.com/111/',
-                'edit_post_url' => 'https://test-site.com/admin/edit-post/111/',
-                'views_count' => '100',
-                'comments_count' => '2',
+                        'id' => '123456',
+                        'title' => 'Test Title',
+                        'category_id' => '123',
+                        'state' => 'published',
+                        'published_at' => '2017-09-04 10:00:00',
+                        'view_post_url' => 'https://test-site.com/111/',
+                        'edit_post_url' => 'https://test-site.com/admin/edit-post/111/',
+                        'views_count' => '100',
+                        'comments_count' => '2',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 404,
@@ -99,17 +111,21 @@ class UpdateTicketDataSet extends AbstractAssociativeDataSet
         $variants['5.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
 
-                'id' => '123456',
-                'title' => 'Test Title',
-                'category_id' => '123',
-                'state' => 'published',
-                'published_at' => 'INVALID DATETIME',
-                'view_post_url' => 'https://test-site.com/111/',
-                'edit_post_url' => 'https://test-site.com/admin/edit-post/111/',
-                'views_count' => '100',
-                'comments_count' => '2',
+                        'id' => '123456',
+                        'title' => 'Test Title',
+                        'category_id' => '123',
+                        'state' => 'published',
+                        'published_at' => 'INVALID DATETIME',
+                        'view_post_url' => 'https://test-site.com/111/',
+                        'edit_post_url' => 'https://test-site.com/admin/edit-post/111/',
+                        'views_count' => '100',
+                        'comments_count' => '2',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 422,

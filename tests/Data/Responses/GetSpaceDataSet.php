@@ -21,7 +21,11 @@ class GetSpaceDataSet extends AbstractAssociativeDataSet
 
         $variants['1.'] = array(
             array(
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 200,
@@ -39,7 +43,11 @@ class GetSpaceDataSet extends AbstractAssociativeDataSet
 
         $variants['2.'] = array(
             array(
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 401,
@@ -50,7 +58,11 @@ class GetSpaceDataSet extends AbstractAssociativeDataSet
 
         $variants['3.'] = array(
             array(
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 404,
@@ -61,7 +73,11 @@ class GetSpaceDataSet extends AbstractAssociativeDataSet
 
         $variants['4.'] = array(
             array(
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 500,

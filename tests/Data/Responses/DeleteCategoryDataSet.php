@@ -21,8 +21,12 @@ class DeleteCategoryDataSet extends AbstractAssociativeDataSet
         $variants['1.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 200,
@@ -37,8 +41,12 @@ class DeleteCategoryDataSet extends AbstractAssociativeDataSet
         $variants['2.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => '',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 404,
@@ -50,8 +58,12 @@ class DeleteCategoryDataSet extends AbstractAssociativeDataSet
         $variants['2.1'] = array(
             array(
                 'space' => '',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 404,
@@ -63,8 +75,12 @@ class DeleteCategoryDataSet extends AbstractAssociativeDataSet
         $variants['2.2'] = array(
             array(
                 'space' => 'test-space',
-                'token' => '',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => '',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 401,
@@ -76,8 +92,12 @@ class DeleteCategoryDataSet extends AbstractAssociativeDataSet
         $variants['2.3'] = array(
             array(
                 'space' => 'test-space',
-                'token' => null,
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => null,
+                    ),
+                ),
             ),
             array(
                 'http_code' => 401,
@@ -89,8 +109,12 @@ class DeleteCategoryDataSet extends AbstractAssociativeDataSet
         $variants['2.4'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 123,
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 123,
+                    ),
+                ),
             ),
             array(
                 'http_code' => 401,

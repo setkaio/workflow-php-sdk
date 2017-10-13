@@ -21,17 +21,21 @@ class SyncTicketAnalyticsDataSet extends AbstractAssociativeDataSet
         $variants['1.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
-                'tickets'  => array(
-                    array(
-                        'id' =>'123',
-                        'views_count' => 100,
-                        'comments_count' => 2,
-                    ),
-                    array(
-                        'id' =>'234',
-                        'views_count' => 200,
-                        'comments_count' => 4,
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                        'tickets'  => array(
+                            array(
+                                'id' =>'123',
+                                'views_count' => 100,
+                                'comments_count' => 2,
+                            ),
+                            array(
+                                'id' =>'234',
+                                'views_count' => 200,
+                                'comments_count' => 4,
+                            ),
+                        ),
                     ),
                 ),
             ),
@@ -60,12 +64,16 @@ class SyncTicketAnalyticsDataSet extends AbstractAssociativeDataSet
         $variants['1.1'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
-                'tickets'  => array(
-                    array(
-                        'id' =>'123',
-                        'views_count' => 100,
-                        'comments_count' => 2,
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                        'tickets'  => array(
+                            array(
+                                'id' =>'123',
+                                'views_count' => 100,
+                                'comments_count' => 2,
+                            ),
+                        ),
                     ),
                 ),
             ),
@@ -87,12 +95,16 @@ class SyncTicketAnalyticsDataSet extends AbstractAssociativeDataSet
         $variants['2.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => '',
-                'tickets'  => array(
-                    array(
-                        'id' =>'123',
-                        'views_count' => 100,
-                        'comments_count' => 2,
+                'options' => array(
+                    'json' => array(
+                        'token' => '',
+                        'tickets'  => array(
+                            array(
+                                'id' =>'123',
+                                'views_count' => 100,
+                                'comments_count' => 2,
+                            ),
+                        ),
                     ),
                 ),
             ),
@@ -106,8 +118,12 @@ class SyncTicketAnalyticsDataSet extends AbstractAssociativeDataSet
         $variants['3.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
-                'tickets'  => array(),
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                        'tickets'  => array(),
+                    ),
+                ),
             ),
             array(
                 'http_code' => 422,

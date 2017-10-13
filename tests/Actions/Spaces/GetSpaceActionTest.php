@@ -56,12 +56,10 @@ class GetSpaceActionTest extends TestCase
      */
     public function testRequest($requestDetails, $responseDetails)
     {
-        $this->api->getAuth()->setToken($requestDetails['token']);
+        $this->api->getAuth()->setToken($requestDetails['options']['json']['token']);
 
         // Prepare action.
-        $details = $this->stub->configureDetails(array(
-            'body' => array(),
-        ));
+        $details = $this->stub->configureDetails($requestDetails);
 
         // Prepare response.
         $response = new Response(

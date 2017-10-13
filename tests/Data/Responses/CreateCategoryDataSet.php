@@ -21,8 +21,12 @@ class CreateCategoryDataSet extends AbstractAssociativeDataSet
         $variants['1.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
-                'name'  => 'Test Name',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                        'name'  => 'Test Name',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 200,
@@ -37,8 +41,12 @@ class CreateCategoryDataSet extends AbstractAssociativeDataSet
         $variants['2.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
-                'name'  => '',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                        'name'  => '',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 422,
@@ -52,8 +60,12 @@ class CreateCategoryDataSet extends AbstractAssociativeDataSet
         $variants['2.1'] = array(
             array(
                 'space' => '',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
-                'name'  => 'Test Name',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                        'name'  => 'Test Name',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 422,
@@ -67,8 +79,12 @@ class CreateCategoryDataSet extends AbstractAssociativeDataSet
         $variants['2.2'] = array(
             array(
                 'space' => 'test-space',
-                'token' => '',
-                'name'  => 'Test Name',
+                'options' => array(
+                    'json' => array(
+                        'token' => '',
+                        'name'  => 'Test Name',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 401,
@@ -80,8 +96,12 @@ class CreateCategoryDataSet extends AbstractAssociativeDataSet
         $variants['2.3'] = array(
             array(
                 'space' => 'test-space',
-                'token' => null,
-                'name'  => 'Test Name',
+                'options' => array(
+                    'json' => array(
+                        'token' => null,
+                        'name'  => 'Test Name',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 401,
@@ -93,8 +113,12 @@ class CreateCategoryDataSet extends AbstractAssociativeDataSet
         $variants['2.4'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 123,
-                'name'  => 'Test Name',
+                'options' => array(
+                    'json' => array(
+                        'token' => 123,
+                        'name'  => 'Test Name',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 401,

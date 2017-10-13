@@ -72,22 +72,25 @@ class CreateCategoryAction extends AbstractAction
     public function configureDetails(array $options)
     {
         $resolver = new OptionsResolver();
-
-        $resolver->setRequired(array('space', 'body'));
-
+        $resolver->setRequired(array('space', 'options'));
         $options = $resolver->resolve($options);
 
-        $resolver = new OptionsResolver();
 
+        $resolver = new OptionsResolver();
+        $resolver->setRequired('json');
+        // Allow any extra fields which can be added in future releases.
+        $resolver->setDefined(array_keys($options['options']));
+        $options['options'] = $resolver->resolve($options['options']);
+
+
+        $resolver = new OptionsResolver();
+        // Token for authorization.
+        $resolver->setDefault('token', $this->getApi()->getAuth()->getToken());
         // Allow default category fields.
         $resolver->setRequired('name');
         // Allow any extra fields which can be added in future releases.
-        $resolver->setDefined(array_keys($options['body']));
-
-        // Token for authorization.
-        $resolver->setDefault('token', $this->getApi()->getAuth()->getToken());
-
-        $options['body'] = $resolver->resolve($options['body']);
+        $resolver->setDefined(array_keys($options['options']['json']));
+        $options['options']['json'] = $resolver->resolve($options['options']['json']);
 
         return $options;
     }

@@ -22,8 +22,12 @@ class UnpublishTicketDataSet extends AbstractAssociativeDataSet
         $variants['1.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 200,
@@ -45,8 +49,12 @@ class UnpublishTicketDataSet extends AbstractAssociativeDataSet
         $variants['1.1'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 200,
@@ -68,8 +76,12 @@ class UnpublishTicketDataSet extends AbstractAssociativeDataSet
         $variants['1.2'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 200,
@@ -91,8 +103,12 @@ class UnpublishTicketDataSet extends AbstractAssociativeDataSet
         $variants['2.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => '',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => '',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 401,
@@ -104,8 +120,12 @@ class UnpublishTicketDataSet extends AbstractAssociativeDataSet
         $variants['3.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => 'NOT_EXISTS_ID',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 404,
@@ -117,8 +137,12 @@ class UnpublishTicketDataSet extends AbstractAssociativeDataSet
         $variants['4.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 422,

@@ -19,8 +19,12 @@ class PublishTicketDataSet extends AbstractAssociativeDataSet
         $variants['1.'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 200,
@@ -42,8 +46,12 @@ class PublishTicketDataSet extends AbstractAssociativeDataSet
         $variants['1.1'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 200,
@@ -65,8 +73,12 @@ class PublishTicketDataSet extends AbstractAssociativeDataSet
         $variants['1.2'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 200,
@@ -88,8 +100,12 @@ class PublishTicketDataSet extends AbstractAssociativeDataSet
         $variants['1.3'] = array(
             array(
                 'space' => 'test-space',
-                'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
                 'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
             ),
             array(
                 'http_code' => 200,
