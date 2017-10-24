@@ -4,7 +4,7 @@ namespace Setka\WorkflowSDK\Exceptions;
 /**
  * Class UnknownResponseException
  */
-class UnknownResponseException extends \Exception
+class UnknownResponseException extends SetkaWorkflowSDKException
 {
 
 }

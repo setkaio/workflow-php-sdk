@@ -4,7 +4,7 @@ namespace Setka\WorkflowSDK\Exceptions;
 /**
  * Class UnauthorizedException
  */
-class UnauthorizedException extends \Exception
+class UnauthorizedException extends SetkaWorkflowSDKException
 {
 
 }
