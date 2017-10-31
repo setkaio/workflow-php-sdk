@@ -75,7 +75,7 @@ class UpdateTicketAction extends AbstractAction
      */
     public function lateConstruct()
     {
-        $this->setHttpMethod('PATH');
+        $this->setHttpMethod('PATCH');
     }
 
     /**
