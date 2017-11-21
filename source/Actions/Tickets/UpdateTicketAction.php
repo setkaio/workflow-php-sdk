@@ -54,7 +54,7 @@ class UpdateTicketAction extends AbstractAction
             return $entity;
         } else {
             $this->handleResponseErrors();
-        }
+        }//end if
     }
 
     /**

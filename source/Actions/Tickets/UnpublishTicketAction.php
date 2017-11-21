@@ -57,7 +57,7 @@ class UnpublishTicketAction extends AbstractAction
             return $entity;
         } else {
             $this->handleResponseErrors();
-        }
+        }//end if
     }
 
     /**

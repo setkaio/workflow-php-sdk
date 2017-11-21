@@ -54,7 +54,7 @@ class PublishTicketAction extends AbstractAction
             return $entity;
         } else {
             $this->handleResponseErrors();
-        }
+        }//end if
     }
 
     /**
