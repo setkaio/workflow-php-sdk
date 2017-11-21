@@ -69,6 +69,18 @@ class CreateCategoryAction extends AbstractAction
         return sprintf(Endpoints::CATEGORIES, rawurlencode($this->details['space']));
     }
 
+    /**
+     * Prepare any additional details for request.
+     *
+     * Calling this method is not required but by using it
+     * you can be sure that you have all required data for request.
+     *
+     * @param array $options Your options which will be merged with defaults.
+     *
+     * @throws \Exception If required args is not presented in your $options or have invalid type.
+     *
+     * @return array Your options merged with defaults.
+     */
     public function configureDetails(array $options)
     {
         $resolver = new OptionsResolver();

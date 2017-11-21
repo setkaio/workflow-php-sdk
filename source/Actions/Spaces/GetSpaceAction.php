@@ -77,6 +77,18 @@ class GetSpaceAction extends AbstractAction
         return sprintf(Endpoints::SPACE, rawurlencode($this->getApi()->getAuth()->getToken()));
     }
 
+    /**
+     * Prepare any additional details for request.
+     *
+     * Calling this method is not required but by using it
+     * you can be sure that you have all required data for request.
+     *
+     * @param array $options Your options which will be merged with defaults.
+     *
+     * @throws \Exception If required args is not presented in your $options or have invalid type.
+     *
+     * @return array Your options merged with defaults.
+     */
     public function configureDetails(array $options)
     {
         $resolver = new OptionsResolver();
@@ -85,7 +97,7 @@ class GetSpaceAction extends AbstractAction
 
 
         $resolver = new OptionsResolver();
-        //$resolver->setRequired('json');
+        // $resolver->setRequired('json');
         // Allow any extra fields which can be added in future releases.
         $resolver->setDefined(array_keys($options['options']));
         $options['options'] = $resolver->resolve($options['options']);
