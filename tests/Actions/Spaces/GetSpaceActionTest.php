@@ -86,8 +86,14 @@ class GetSpaceActionTest extends TestCase
             $this->assertEquals($responseDetails['http_body']['name'], $entity->getName());
             $this->assertEquals($responseDetails['http_body']['short_name'], $entity->getShortName());
             $this->assertEquals($responseDetails['http_body']['active'], $entity->isActive());
-            $this->assertEquals($responseDetails['http_body']['created_at'], $entity->getCreatedAt()->format('Y-m-d G:i:s'));
-            $this->assertEquals($responseDetails['http_body']['updated_at'], $entity->getUpdatedAt()->format('Y-m-d G:i:s'));
+            $this->assertEquals(
+                $responseDetails['http_body']['created_at'],
+                $entity->getCreatedAt()->format('Y-m-d G:i:s')
+            );
+            $this->assertEquals(
+                $responseDetails['http_body']['updated_at'],
+                $entity->getUpdatedAt()->format('Y-m-d G:i:s')
+            );
         }
     }
 

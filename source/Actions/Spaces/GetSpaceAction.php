@@ -94,7 +94,7 @@ class GetSpaceAction extends AbstractAction
         $resolver = new OptionsResolver();
         $resolver->setRequired(array('options'));
         $options = $resolver->resolve($options);
-        
+
         $resolver = new OptionsResolver();
         // Allow any extra fields which can be added in future releases.
         $resolver->setDefined(array_keys($options['options']));
