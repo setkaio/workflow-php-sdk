@@ -1,0 +1,8 @@
+test:
+  script:
+    - composer install
+    - vendor/bin/phpunit --configuration=phpunit.xml.dist
+  tags:
+    - workflow-php-sdk
+  except:
+    - tags
