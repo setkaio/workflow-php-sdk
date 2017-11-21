@@ -24,53 +24,40 @@ class UnpublishTicketAction extends AbstractAction
      *
      * Each action have their own logic of this method and different set of possible exceptions.
      *
-     * @throws UnauthorizedException If token missed or invalid.
-     * @throws NotFoundException If ticket not found.
-     * @throws UnprocessableEntityException If something your your request was wrong (or ticket already published).
-     * @throws UnknownResponseException If API returns unknown HTTP status code.
+     * @see handleResponseErrors
+     *
+     * @throws \Exception Different exceptions (see $this->handleResponseErrors()).
      *
      * @return TicketEntity If response was successful.
      */
     public function handleResponse()
     {
-        switch ($this->getResponse()->getStatusCode()) {
-            case 200:
-                $entity = new TicketEntity();
-                $data   = $this->decodeResponse();
-                $entity
-                    ->setId($data['id'])
-                    ->setTitle($data['title'])
-                    ->setCategoryId($data['category_id'])
-                    ->setState($data['state'])
-                    ->setViewPostUrl($data['view_post_url'])
-                    ->setEditPostUrl($data['edit_post_url'])
-                    ->setViewsCount($data['views_count'])
-                    ->setCommentsCount($data['comments_count']);
+        if ($this->getResponse()->getStatusCode()) {
+            $entity = new TicketEntity();
+            $data   = $this->decodeResponse();
+            $entity
+                ->setId($data['id'])
+                ->setTitle($data['title'])
+                ->setCategoryId($data['category_id'])
+                ->setState($data['state'])
+                ->setViewPostUrl($data['view_post_url'])
+                ->setEditPostUrl($data['edit_post_url'])
+                ->setViewsCount($data['views_count'])
+                ->setCommentsCount($data['comments_count']);
 
-                if ($data['published_at']) {
-                    $entity->setPublishedAt(
-                        new \DateTime(
-                            $data['published_at'],
-                            new \DateTimeZone('UTC')
-                        )
-                    );
-                }
+            if ($data['published_at']) {
+                $entity->setPublishedAt(
+                    new \DateTime(
+                        $data['published_at'],
+                        new \DateTimeZone('UTC')
+                    )
+                );
+            }
 
-                return $entity;
-
-            case 401:
-                throw new UnauthorizedException();
-
-            case 404:
-                throw new NotFoundException();
-
-            case 422:
-                $data = $this->decodeResponse();
-                throw new UnprocessableEntityException($data['message']);
-
-            default:
-                throw new UnknownResponseException();
-        }//end switch
+            return $entity;
+        } else {
+            $this->handleResponseErrors();
+        }
     }
 
     /**

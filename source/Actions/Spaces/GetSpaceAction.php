@@ -23,42 +23,34 @@ class GetSpaceAction extends AbstractAction
      *
      * Each action have their own logic of this method and different set of possible exceptions.
      *
-     * @throws UnauthorizedException If token missed or invalid.
-     * @throws NotFoundException If space not found.
-     * @throws UnknownResponseException If API returns unknown HTTP status code.
+     * @see handleResponseErrors
+     *
+     * @throws \Exception Different exceptions (see $this->handleResponseErrors()).
      *
      * @return SpaceEntity If response was successful.
      */
     public function handleResponse()
     {
-        switch ($this->getResponse()->getStatusCode()) {
-            case 200:
-                $entity = new SpaceEntity();
-                $data   = $this->decodeResponse();
+        if ($this->getResponse()->getStatusCode()) {
+            $entity = new SpaceEntity();
+            $data   = $this->decodeResponse();
 
-                $entity
-                    ->setId($data['id'])
-                    ->setName($data['name'])
-                    ->setShortName($data['short_name'])
-                    ->setActive($data['active'])
-                    ->setCreatedAt(
-                        new \DateTime($data['created_at'], new \DateTimeZone('UTC'))
-                    )
-                    ->setUpdatedAt(
-                        new \DateTime($data['updated_at'], new \DateTimeZone('UTC'))
-                    );
+            $entity
+                ->setId($data['id'])
+                ->setName($data['name'])
+                ->setShortName($data['short_name'])
+                ->setActive($data['active'])
+                ->setCreatedAt(
+                    new \DateTime($data['created_at'], new \DateTimeZone('UTC'))
+                )
+                ->setUpdatedAt(
+                    new \DateTime($data['updated_at'], new \DateTimeZone('UTC'))
+                );
 
-                return $entity;
-
-            case 401:
-                throw new UnauthorizedException();
-
-            case 404:
-                throw new NotFoundException();
-
-            default:
-                throw new UnknownResponseException();
-        }//end switch
+            return $entity;
+        } else {
+            $this->handleResponseErrors();
+        }
     }
 
     /**

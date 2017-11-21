@@ -3,6 +3,11 @@ namespace Setka\WorkflowSDK\Actions;
 
 use Psr\Http\Message\ResponseInterface;
 use Setka\WorkflowSDK\API;
+use Setka\WorkflowSDK\Exceptions\NotFoundException;
+use Setka\WorkflowSDK\Exceptions\ServerException;
+use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
+use Setka\WorkflowSDK\Exceptions\UnknownResponseException;
+use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 
 /**
  * Class AbstractAction
@@ -63,6 +68,38 @@ abstract class AbstractAction implements ActionInterface
         $this->setResponse($response);
 
         return $this;
+    }
+
+    /**
+     * Handle response status codes which indicates errors.
+     *
+     * @throws UnauthorizedException If token missed or invalid
+     * @throws NotFoundException If requested resource not found.
+     * @throws ServerException Server side error.
+     * @throws UnprocessableEntityException If something your your request was wrong.
+     * @throws UnknownResponseException If API returns unknown HTTP status code.
+     */
+    public function handleResponseErrors()
+    {
+        switch ($this->getResponse()->getStatusCode()) {
+            case 401:
+                throw new UnauthorizedException();
+
+            case 404:
+                throw new NotFoundException();
+
+            case 422:
+                $data = $this->decodeResponse();
+                throw new UnprocessableEntityException($data['message']);
+
+            case 502:
+            case 503:
+            case 504:
+                throw new ServerException();
+
+            default:
+                throw new UnknownResponseException();
+        }
     }
 
     public function decodeResponse()

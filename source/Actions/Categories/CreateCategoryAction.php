@@ -23,33 +23,24 @@ class CreateCategoryAction extends AbstractAction
      *
      * Each action have their own logic of this method and different set of possible exceptions.
      *
-     * @throws UnauthorizedException If token missed or invalid.
-     * @throws UnprocessableEntityException If something your your request was wrong.
-     * @throws UnknownResponseException If API returns unknown HTTP status code.
+     * @see handleResponseErrors
+     *
+     * @throws \Exception Different exceptions (see $this->handleResponseErrors()).
      *
      * @return CategoryEntity If response was successful.
      */
     public function handleResponse()
     {
-        switch ($this->getResponse()->getStatusCode()) {
-            case 200:
-                $entity = new CategoryEntity();
-                $data   = $this->decodeResponse();
-                $entity
-                    ->setId($data['id'])
-                    ->setName($data['name']);
+        if ($this->getResponse()->getStatusCode()) {
+            $entity = new CategoryEntity();
+            $data   = $this->decodeResponse();
+            $entity
+                ->setId($data['id'])
+                ->setName($data['name']);
 
-                return $entity;
-
-            case 401:
-                throw new UnauthorizedException();
-
-            case 422:
-                $data = $this->decodeResponse();
-                throw new UnprocessableEntityException($data['message']);
-
-            default:
-                throw new UnknownResponseException();
+            return $entity;
+        } else {
+            $this->handleResponseErrors();
         }
     }
 
