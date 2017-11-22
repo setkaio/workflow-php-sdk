@@ -3,6 +3,7 @@ namespace Setka\WorkflowSDK\Tests\Data\Responses;
 
 use Setka\WorkflowSDK\Entities\TicketEntity;
 use Setka\WorkflowSDK\Exceptions\NotFoundException;
+use Setka\WorkflowSDK\Exceptions\ServerException;
 use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
 use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 use Setka\WorkflowSDK\Tests\Data\AbstractAssociativeDataSet;
@@ -150,6 +151,57 @@ class UnpublishTicketDataSet extends AbstractAssociativeDataSet
                     'message' => 'Ticket is not published',
                 ),
                 'handle_expect' => UnprocessableEntityException::class,
+            ),
+        );
+
+        $variants['5.'] = array(
+            array(
+                'space' => 'test-space',
+                'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 502,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
+            ),
+        );
+
+        $variants['5.1'] = array(
+            array(
+                'space' => 'test-space',
+                'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 503,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
+            ),
+        );
+
+        $variants['5.2'] = array(
+            array(
+                'space' => 'test-space',
+                'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 504,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
             ),
         );
 

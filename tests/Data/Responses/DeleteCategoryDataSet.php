@@ -3,6 +3,7 @@ namespace Setka\WorkflowSDK\Tests\Data\Responses;
 
 use Setka\WorkflowSDK\Entities\CategoryEntity;
 use Setka\WorkflowSDK\Exceptions\NotFoundException;
+use Setka\WorkflowSDK\Exceptions\ServerException;
 use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
 use Setka\WorkflowSDK\Tests\Data\AbstractAssociativeDataSet;
 
@@ -120,6 +121,57 @@ class DeleteCategoryDataSet extends AbstractAssociativeDataSet
                 'http_code' => 401,
                 'http_body' => array(),
                 'handle_expect' => UnauthorizedException::class,
+            ),
+        );
+
+        $variants['3.'] = array(
+            array(
+                'space' => 'test-space',
+                'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 502,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
+            ),
+        );
+
+        $variants['3.1'] = array(
+            array(
+                'space' => 'test-space',
+                'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 503,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
+            ),
+        );
+
+        $variants['3.2'] = array(
+            array(
+                'space' => 'test-space',
+                'id'  => '123456',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 504,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
             ),
         );
 
