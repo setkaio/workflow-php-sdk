@@ -4,6 +4,7 @@ namespace Setka\WorkflowSDK\Tests\Data\Responses;
 use Setka\WorkflowSDK\Entities\CategoryEntity;
 use Setka\WorkflowSDK\Entities\TicketEntity;
 use Setka\WorkflowSDK\Exceptions\NotFoundException;
+use Setka\WorkflowSDK\Exceptions\ServerException;
 use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
 use Setka\WorkflowSDK\Exceptions\UnprocessableEntityException;
 use Setka\WorkflowSDK\Tests\Data\AbstractAssociativeDataSet;
@@ -133,6 +134,84 @@ class UpdateTicketDataSet extends AbstractAssociativeDataSet
                     'message' => 'date format is invalid',
                 ),
                 'handle_expect' => UnprocessableEntityException::class,
+            ),
+        );
+
+        $variants['6.'] = array(
+            array(
+                'space' => 'test-space',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+
+                        'id' => '123456',
+                        'title' => 'Test Title',
+                        'category_id' => '123',
+                        'state' => 'published',
+                        'published_at' => '2017-09-04 10:00:00',
+                        'view_post_url' => 'https://test-site.com/111/',
+                        'edit_post_url' => 'https://test-site.com/admin/edit-post/111/',
+                        'views_count' => '100',
+                        'comments_count' => '2',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 502,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
+            ),
+        );
+
+        $variants['6.1'] = array(
+            array(
+                'space' => 'test-space',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+
+                        'id' => '123456',
+                        'title' => 'Test Title',
+                        'category_id' => '123',
+                        'state' => 'published',
+                        'published_at' => '2017-09-04 10:00:00',
+                        'view_post_url' => 'https://test-site.com/111/',
+                        'edit_post_url' => 'https://test-site.com/admin/edit-post/111/',
+                        'views_count' => '100',
+                        'comments_count' => '2',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 503,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
+            ),
+        );
+
+        $variants['6.2'] = array(
+            array(
+                'space' => 'test-space',
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+
+                        'id' => '123456',
+                        'title' => 'Test Title',
+                        'category_id' => '123',
+                        'state' => 'published',
+                        'published_at' => '2017-09-04 10:00:00',
+                        'view_post_url' => 'https://test-site.com/111/',
+                        'edit_post_url' => 'https://test-site.com/admin/edit-post/111/',
+                        'views_count' => '100',
+                        'comments_count' => '2',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 504,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
             ),
         );
 

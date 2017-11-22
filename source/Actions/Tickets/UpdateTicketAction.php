@@ -32,7 +32,7 @@ class UpdateTicketAction extends AbstractAction
      */
     public function handleResponse()
     {
-        if ($this->getResponse()->getStatusCode()) {
+        if (200 === $this->getResponse()->getStatusCode()) {
             $entity = new TicketEntity();
             $data   = $this->decodeResponse();
             $entity

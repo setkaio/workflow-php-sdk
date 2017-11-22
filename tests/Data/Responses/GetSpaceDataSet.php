@@ -3,6 +3,7 @@ namespace Setka\WorkflowSDK\Tests\Data\Responses;
 
 use Setka\WorkflowSDK\Entities\SpaceEntity;
 use Setka\WorkflowSDK\Exceptions\NotFoundException;
+use Setka\WorkflowSDK\Exceptions\ServerException;
 use Setka\WorkflowSDK\Exceptions\UnauthorizedException;
 use Setka\WorkflowSDK\Exceptions\UnknownResponseException;
 use Setka\WorkflowSDK\Tests\Data\AbstractAssociativeDataSet;
@@ -83,6 +84,51 @@ class GetSpaceDataSet extends AbstractAssociativeDataSet
                 'http_code' => 500,
                 'http_body' => array(),
                 'handle_expect' => UnknownResponseException::class,
+            ),
+        );
+
+        $variants['4.1'] = array(
+            array(
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 502,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
+            ),
+        );
+
+        $variants['4.2'] = array(
+            array(
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 503,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
+            ),
+        );
+
+        $variants['4.3'] = array(
+            array(
+                'options' => array(
+                    'json' => array(
+                        'token' => 'P9mYAXprVQBG9PFQwLiSzv8VyUbfXt6cP9mYAXprVQBG9PFQwL',
+                    ),
+                ),
+            ),
+            array(
+                'http_code' => 504,
+                'http_body' => array(),
+                'handle_expect' => ServerException::class,
             ),
         );
 

@@ -31,7 +31,7 @@ class GetSpaceAction extends AbstractAction
      */
     public function handleResponse()
     {
-        if ($this->getResponse()->getStatusCode()) {
+        if (200 === $this->getResponse()->getStatusCode()) {
             $entity = new SpaceEntity();
             $data   = $this->decodeResponse();
 
