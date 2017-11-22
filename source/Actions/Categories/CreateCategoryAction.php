@@ -31,13 +31,12 @@ class CreateCategoryAction extends AbstractAction
      */
     public function handleResponse()
     {
-        if ($this->getResponse()->getStatusCode()) {
+        if (200 === $this->getResponse()->getStatusCode()) {
             $entity = new CategoryEntity();
             $data   = $this->decodeResponse();
             $entity
                 ->setId($data['id'])
                 ->setName($data['name']);
-
             return $entity;
         } else {
             $this->handleResponseErrors();

@@ -31,7 +31,7 @@ class SyncTicketAnalyticsAction extends AbstractAction
      */
     public function handleResponse()
     {
-        if ($this->getResponse()->getStatusCode()) {
+        if (200 === $this->getResponse()->getStatusCode()) {
             $data     = $this->decodeResponse();
             $entities = array();
 
