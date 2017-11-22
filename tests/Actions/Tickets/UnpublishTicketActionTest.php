@@ -78,7 +78,7 @@ class UnpublishTicketActionTest extends \PHPUnit_Framework_TestCase
             $entity = $exception;
         }
 
-        $this->assertTrue(is_a($entity, $responseDetails['handle_expect']));
+        $this->assertInstanceOf($responseDetails['handle_expect'], $entity);
 
         if (!is_a($entity, \Exception::class)) {
             $this->assertEquals($responseDetails['http_body']['id'], $entity->getId());

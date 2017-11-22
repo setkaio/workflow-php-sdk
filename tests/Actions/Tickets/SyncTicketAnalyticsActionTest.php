@@ -79,13 +79,13 @@ class SyncTicketAnalyticsActionTest extends \PHPUnit_Framework_TestCase
         }
 
         if (is_a($entities, \Exception::class)) {
-            $this->assertTrue(is_a($entities, $responseDetails['handle_expect']));
+            $this->assertInstanceOf($responseDetails['handle_expect'], $entities);
         } else {
             $this->assertTrue(is_array($entities));
             $this->assertNotEmpty($entities);
 
             foreach ($entities as $entityKey => $entityValue) {
-                $this->assertTrue(is_a($entityValue, $responseDetails['handle_expect']));
+                $this->assertInstanceOf($responseDetails['handle_expect'], $entityValue);
 
                 $this->assertEquals(
                     $responseDetails['http_body'][$entityKey]['id'],
