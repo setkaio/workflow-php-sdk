@@ -2,7 +2,6 @@
 namespace Setka\WorkflowSDK;
 
 use GuzzleHttp\ClientInterface;
-use Setka\WorkflowSDK\Entities\Space;
 
 /**
  * Class API
