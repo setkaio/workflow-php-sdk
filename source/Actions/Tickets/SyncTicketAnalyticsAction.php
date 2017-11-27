@@ -17,17 +17,17 @@ class SyncTicketAnalyticsAction extends AbstractAction
     /**
      * Handle response.
      *
-     * Actually this method check for status codes and try to return an Entity object
+     * This method checks for status codes and try to return an Entity object
      * if request was successful (usually Response object have 200 status). But if
-     * something goes wrong during request this method can throws different exceptions.
+     * something goes wrong during request this method can thrown different exceptions.
      *
-     * Each action have their own logic of this method and different set of possible exceptions.
+     * Each action has its own logic of this method and a different set of possible exceptions.
      *
      * @see handleResponseErrors
      *
      * @throws \Exception Different exceptions (see $this->handleResponseErrors()).
      *
-     * @return TicketEntity[] If response was successful.
+     * @return TicketEntity If response was successful.
      */
     public function handleResponse()
     {

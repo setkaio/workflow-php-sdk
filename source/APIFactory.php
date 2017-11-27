@@ -11,7 +11,7 @@ class APIFactory
     /**
      * Creates API instance.
      *
-     * It's a helper method and you can create API instance manually.
+     * It's a helper method so you can create API instance manually.
      *
      * @param $token string API Token.
      * @param $client ClientInterface Guzzle client which make requests.
