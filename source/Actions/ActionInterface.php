@@ -19,7 +19,7 @@ interface ActionInterface
     /**
      * Handles (verifies) the response object.
      *
-     * @throws \Exception See Action classes to see that exceptions can be throwed.
+     * @throws \Exception See Action classes to see that exceptions can be thrown.
      *
      * @return mixed Different Entities or variable types (depends on action).
      */

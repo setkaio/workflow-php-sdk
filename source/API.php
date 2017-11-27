@@ -42,7 +42,7 @@ class API
     }
 
     /**
-     * Returns Client instance which used to send HTTP requests.
+     * Returns Client instance which is used to send HTTP requests.
      *
      * @return ClientInterface Guzzle client.
      */
@@ -52,7 +52,7 @@ class API
     }
 
     /**
-     * Setup Client instance which used to send HTTP requests.
+     * Setup Client instance which is used to send HTTP requests.
      *
      * @param ClientInterface $client Guzzle client.
      *

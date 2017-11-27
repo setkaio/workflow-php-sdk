@@ -1,6 +1,6 @@
 # Setka Workflow PHP SDK
 
-This library can be used to easily send the requests to Setka Workflow API.
+This library can be used to easily send requests to Setka Workflow API.
 
 ## How to use it
 
@@ -34,7 +34,7 @@ try {
   }
 }
 
-// If no exception was throwed then request was successful and you can use $entity object.
+// If no exception was thrown then request was successful and you can use $entity object.
 ```
 
 ## Contributing
