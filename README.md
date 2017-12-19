@@ -2,7 +2,7 @@
 
 Библиотека создана для упрощения взаимодействия с Workflow API. Например, вы сможете обновлять информацию о тикетах и управлять категориями.
 
-В качестве прослойки для отправки запросов используется [Guzzle](https://github.com/guzzle/guzzle). Благодаря этому вы сможете использовать любой клиент для отправки запросов, например, cURL или Stream, или [создать любой другой клиент](http://docs.guzzlephp.org/en/stable/handlers-and-middleware.html#creating-a-handler).
+В качестве прослойки для отправки запросов используется [Guzzle](https://github.com/guzzle/guzzle). Благодаря этому вы сможете использовать любой клиент для отправки запросов, например, cURL или Stream, или [создать свой собственный клиент](http://docs.guzzlephp.org/en/stable/handlers-and-middleware.html#creating-a-handler).
 
 ## Начало работы
 
