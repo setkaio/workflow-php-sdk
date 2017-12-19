@@ -31,18 +31,61 @@ composer require setka/workflow-php-sdk
 
 1. Зайдите в свой аккаунт на сайте [workflow.setka.io](https://workflow.setka.io/).
 2. Перейдите в Settings (в правом верхнем углу).
-3. В меню слева перейдите в раздел Custom CMS (на этой странице можно увидеть API License key или сбросить его).
+3. В меню слева перейдите в раздел Custom CMS (на этой странице можно увидеть API License key или изменить его).
 
-## How to use it
+## Ваш первый запрос в Setka Workflow API
 
-Simple example which shows how you can use this library.
+Для отправки запросов необходимо инициализировать несколько объектов.
+
+* `Setka\WorkflowSDK\API` — главный объект для общения с API.
+    * `GuzzleHttp\Client` — отправляет HTTP запросы с помощью выбранного Handler.
+    * `Setka\WorkflowSDK\AuthCredits` — хранит в себе данные для авторизации в Workflow API (API license token).
+* `Setka\WorkflowSDK\Actions\ActionInterface` — любой из классов имеющий этот интерфейс создан и настроен для отправки необходимого запроса в API.
 
 ```php
 use Setka\WorkflowSDK\APIFactory;
-use Setka\WorkflowSDK\Actions\Categories\CreateCategoryAction;
+use Setka\WorkflowSDK\Actions\Spaces\GetSpaceAction;
 
 try {
-  // Creating the main API instance.
+  // Вы можете использовать фабрику для быстрого использования.
+  // Или самостоятельно создавать все необходимые объекты.
+  $api = APIFactory::create('YOUR_TOKEN');
+  
+  // Создаем Action для получения необходимой информации.
+  $action = new GetSpaceAction($api);
+
+  // Если вы хотите отключить выбрасывание исключений внутри Guzzle.
+  $details = $action->configureDetails(array(
+    'options' => array(
+      'http_errors' => false,
+    ),
+  ));
+
+  $entity = $action
+    // Сохраняем настройки и параметры
+    ->setDetails($details)
+    // Делаем запрос
+    ->request()
+    // Обрабатываем запрос (каждый Action имеет свою собственную функцию handleResponse.
+    ->handleResponse();
+    
+  // If no exception was thrown then request was successful and you can use $entity object (Setka\WorkflowSDK\Entities\SpaceEntity).
+    
+  $shortName = $entity->getShortName();
+  $name      = $entity->getName();
+} catch (\Exception $exception) {
+    // Error
+}
+```
+
+## Создаем категорию
+
+После того как вы сделали свой первый запрос, о котором рассказывалось выше, вы можете сохранить Space Short Name, т. к. этот параметр используется для отправки остальных запросов. Это значение, как правило, неизменно для компании, поэтому для экономии времени и лучшей производительности лучше сохранить его локально.
+
+В примере ниже мы создадим новую категорию в Setka Workflow, указав произвольное имя. Похожим образом вы можете работать и с другими сущностями Setka Workflow.
+
+```php
+try {
   $api = APIFactory::create('YOUR_TOKEN');
   
   // Creating action for creating category.
@@ -50,9 +93,14 @@ try {
 
   // Configure action.
   $details = $action->configureDetails(array(
+    // You can get this value from previous request example
     'space' => 'your-space-slug',
-    'body' => array(
-      'name' => 'Name for category',
+    'options' => array(
+      // Выключение выброса ошибок от Guzzle.
+      'http_errors' => false,
+      'json' => array(
+        'name' => 'Your name for category',
+      ),
     ),
   ));
 
@@ -60,12 +108,13 @@ try {
     ->setDetails($details)
     ->request()
     ->handleResponse();
-  } catch (\Exception $exception) {
-    // Error
-  }
+    
+  // Category sucessfylly created!
+  
+  // You can use $entity instance in your code.    
+} catch (\Exception $exception) {
+  // Error
 }
-
-// If no exception was thrown then request was successful and you can use $entity object.
 ```
 
 ## Contributing
