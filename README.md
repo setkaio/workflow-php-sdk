@@ -10,20 +10,20 @@
 
 1. Откройте ваш файл `composer.json` и добавьте несколько строчек конфигурации `repositories`.
 
-```json
-"repositories": [
-  {
-    "type": "git",
-    "url": "https://github.com/setkaio/workflow-php-sdk.git"
-  }
-]
-```
+    ```json
+    "repositories": [
+      {
+        "type": "git",
+        "url": "https://github.com/setkaio/workflow-php-sdk.git"
+      }
+    ]
+    ```
 
 2. Выполните команду `composer require` из папки вашего проекта.
 
-```bash
-composer require setka/workflow-php-sdk
-```
+    ```bash
+    composer require setka/workflow-php-sdk
+    ```
 
 ### Что нужно для начала работы с Workflow API?
 
