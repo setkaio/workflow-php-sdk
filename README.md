@@ -66,7 +66,7 @@ try {
     ->setDetails($details)
     // Делаем запрос
     ->request()
-    // Обрабатываем запрос (каждый Action имеет свою собственную функцию handleResponse.
+    // Обрабатываем запрос (каждый Action имеет свою собственную функцию handleResponse).
     ->handleResponse();
     
   // If no exception was thrown then request was successful and you can use $entity object (Setka\WorkflowSDK\Entities\SpaceEntity).
