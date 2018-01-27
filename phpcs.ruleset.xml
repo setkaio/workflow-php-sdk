@@ -7,8 +7,9 @@
 
 	<arg name="colors"/>
 
-	<rule ref="PSR2"/>
-	<rule ref="Generic.Arrays.DisallowShortArraySyntax"/>
+    <rule ref="PSR2"/>
+
+    <rule ref="Generic.Arrays.DisallowShortArraySyntax"/>
     <rule ref="Generic.Classes.DuplicateClassName"/>
     <rule ref="Generic.Commenting">
         <exclude name="Generic.Commenting.DocComment"/>
@@ -18,6 +19,7 @@
     <rule ref="Generic.Files">
         <exclude name="Generic.Files.EndFileNoNewline"/>
         <exclude name="Generic.Files.LowercasedFilename"/>
+        <exclude name="Generic.Files.LineLength"/>
     </rule>
     <rule ref="Generic.Formatting">
         <exclude name="Generic.Formatting.NoSpaceAfterCast"/>
@@ -25,7 +27,17 @@
     </rule>
     <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
     <rule ref="Generic.Metrics"/>
+    <rule ref="Generic.Metrics.CyclomaticComplexity">
+        <properties>
+            <property name="complexity" value="12"/>
+        </properties>
+    </rule>
     <rule ref="Generic.NamingConventions"/>
+    <rule ref="Generic.NamingConventions.CamelCapsFunctionName">
+        <properties>
+            <property name="strict" value="false"/>
+        </properties>
+    </rule>
     <rule ref="Generic.PHP">
         <exclude name="Generic.PHP.ClosingPHPTag"/>
         <exclude name="Generic.PHP.UpperCaseConstant"/>
@@ -34,10 +46,12 @@
     <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
 
     <rule ref="Squiz.Classes"/>
-    <rule ref="Squiz.Commenting">
-        <exclude name="Squiz.Commenting.FileComment"/>
-        <exclude name="Squiz.Commenting.ClosingDeclarationComment"/>
-        <exclude name="Squiz.Commenting.FunctionComment"/>
+
+    <rule ref="Squiz.Commenting.DocCommentAlignment"/>
+    <rule ref="Squiz.Commenting.VariableComment"/>
+    <rule ref="Squiz.ControlStructures">
+        <exclude name="Squiz.ControlStructures.ElseIfDeclaration"/>
+        <exclude name="Squiz.ControlStructures.ControlSignature"/>
+        <exclude name="Squiz.ControlStructures.SwitchDeclaration"/>
     </rule>
-    <!--<rule ref="Squiz.ControlStructures"/>-->
 </ruleset>
