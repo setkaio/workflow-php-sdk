@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 - February 12, 2018
+
+Fixed license format in composer.json.
+
 ## 1.1.0 - December 28, 2017
 
 Updated README.md file.
