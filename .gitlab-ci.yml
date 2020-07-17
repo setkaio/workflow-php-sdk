@@ -1,9 +1,10 @@
 before_script:
-  - composer install
+  - sh ./bin/install-composer.sh
+  - /usr/bin/php7.2 dist/composer.phar install --quiet --no-interaction --no-progress --optimize-autoloader --classmap-authoritative
 
 test:
   script:
-    - vendor/bin/phpunit --configuration=phpunit.xml.dist
+    - /usr/bin/php7.2 vendor/bin/phpunit --configuration=phpunit.xml.dist
   tags:
     - workflow-php-sdk
   except:
@@ -11,7 +12,7 @@ test:
 
 code-sniffer:
   script:
-    - vendor/bin/phpcs --standard=phpcs.ruleset.xml
+    - /usr/bin/php7.2 vendor/bin/phpcs --standard=phpcs.ruleset.xml
   tags:
     - workflow-php-sdk
   except:
