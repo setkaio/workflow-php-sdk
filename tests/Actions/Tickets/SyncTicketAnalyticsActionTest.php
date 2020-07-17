@@ -3,6 +3,7 @@ namespace Setka\WorkflowSDK\Tests\Actions\Tickets;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 use Setka\WorkflowSDK\Actions\Tickets\SyncTicketAnalyticsAction;
 use Setka\WorkflowSDK\API;
 use Setka\WorkflowSDK\AuthCredits;
@@ -13,7 +14,7 @@ use Setka\WorkflowSDK\Tests\LocalHandler;
 /**
  * Class SyncTicketAnalyticsActionTest
  */
-class SyncTicketAnalyticsActionTest extends \PHPUnit_Framework_TestCase
+class SyncTicketAnalyticsActionTest extends TestCase
 {
     /**
      * @var API
