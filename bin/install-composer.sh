@@ -1,8 +1,8 @@
 #!/bin/sh
 
 EXPECTED_CHECKSUM="$(wget -q -O - https://composer.github.io/installer.sig)"
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-ACTUAL_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
+$PHP -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+ACTUAL_CHECKSUM="$($PHP -r "echo hash_file('sha384', 'composer-setup.php');")"
 
 if [ "$EXPECTED_CHECKSUM" != "$ACTUAL_CHECKSUM" ]
 then
@@ -15,7 +15,7 @@ if [ ! -d dist ]; then
   mkdir dist
 fi
 
-php composer-setup.php --quiet --install-dir=dist
+$PHP composer-setup.php --quiet --install-dir=dist
 RESULT=$?
 rm composer-setup.php
 exit $RESULT
