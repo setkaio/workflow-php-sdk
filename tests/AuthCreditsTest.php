@@ -1,12 +1,13 @@
 <?php
 namespace Setka\WorkflowSDK\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Setka\WorkflowSDK\AuthCredits;
 
 /**
  * Class AuthCreditsTest
  */
-class AuthCreditsTest extends \PHPUnit_Framework_TestCase
+class AuthCreditsTest extends TestCase
 {
     /**
      * Test constructor.

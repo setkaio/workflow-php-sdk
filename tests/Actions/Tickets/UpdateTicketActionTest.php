@@ -3,6 +3,7 @@ namespace Setka\WorkflowSDK\Tests\Actions\Tickets;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 use Setka\WorkflowSDK\Actions\Tickets\UpdateTicketAction;
 use Setka\WorkflowSDK\API;
 use Setka\WorkflowSDK\AuthCredits;
@@ -13,7 +14,7 @@ use Setka\WorkflowSDK\Tests\LocalHandler;
 /**
  * Class UpdateTicketActionTest
  */
-class UpdateTicketActionTest extends \PHPUnit_Framework_TestCase
+class UpdateTicketActionTest extends TestCase
 {
     /**
      * @var API

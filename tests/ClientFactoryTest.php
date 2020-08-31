@@ -2,12 +2,13 @@
 namespace Setka\WorkflowSDK\Tests;
 
 use GuzzleHttp\Client;
+use PHPUnit\Framework\TestCase;
 use Setka\WorkflowSDK\ClientFactory;
 
 /**
  * Class ClientFactoryTest
  */
-class ClientFactoryTest extends \PHPUnit_Framework_TestCase
+class ClientFactoryTest extends TestCase
 {
     /**
      * Test creating method.
@@ -17,6 +18,6 @@ class ClientFactoryTest extends \PHPUnit_Framework_TestCase
     public function testCreate()
     {
         $a = ClientFactory::create();
-        $this->assertTrue(is_a($a, Client::class));
+        $this->assertInstanceOf(Client::class, $a);
     }
 }

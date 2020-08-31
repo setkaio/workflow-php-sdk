@@ -17,7 +17,7 @@ class SpaceEntity extends AbstractEntity
     protected $shortName;
 
     /**
-     * @var bool Space state.
+     * @var boolean Space state.
      */
     protected $active;
 
