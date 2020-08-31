@@ -2,6 +2,7 @@
 namespace Setka\WorkflowSDK\Tests;
 
 use GuzzleHttp\Client;
+use PHPUnit\Framework\TestCase;
 use Setka\WorkflowSDK\API;
 use Setka\WorkflowSDK\APIFactory;
 use Setka\WorkflowSDK\AuthCredits;
@@ -10,7 +11,7 @@ use Setka\WorkflowSDK\ClientFactory;
 /**
  * Class APIFactoryTest
  */
-class APIFactoryTest extends \PHPUnit_Framework_TestCase
+class APIFactoryTest extends TestCase
 {
     /**
      * Test create.

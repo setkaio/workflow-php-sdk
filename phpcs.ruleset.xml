@@ -14,7 +14,9 @@
     <rule ref="Generic.Commenting">
         <exclude name="Generic.Commenting.DocComment"/>
     </rule>
-    <rule ref="Generic.ControlStructures"/>
+    <rule ref="Generic.ControlStructures">
+        <exclude name="Generic.ControlStructures.DisallowYodaConditions.Found"/>
+    </rule>
     <rule ref="Generic.Debug"/>
     <rule ref="Generic.Files">
         <exclude name="Generic.Files.EndFileNoNewline"/>
@@ -41,6 +43,7 @@
     <rule ref="Generic.PHP">
         <exclude name="Generic.PHP.ClosingPHPTag"/>
         <exclude name="Generic.PHP.UpperCaseConstant"/>
+        <exclude name="Generic.PHP.RequireStrictTypes.MissingDeclaration"/>
     </rule>
     <rule ref="Generic.Strings"/>
     <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>

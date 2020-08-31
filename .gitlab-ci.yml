@@ -1,18 +1,43 @@
-before_script:
-  - composer install
+.before_script: &before_script
+  before_script:
+    - sh ./bin/install-composer.sh
+    - $PHP dist/composer.phar install --quiet --no-interaction --no-progress --optimize-autoloader --classmap-authoritative
 
-test:
+.phpunit: &phpunit
   script:
-    - vendor/bin/phpunit --configuration=phpunit.xml.dist
+    - $PHP vendor/bin/phpunit --configuration=phpunit.xml.dist
   tags:
     - workflow-php-sdk
   except:
     - tags
 
-code-sniffer:
+.phpcs: &phpcs
   script:
-    - vendor/bin/phpcs --standard=phpcs.ruleset.xml
+    - $PHP vendor/bin/phpcs --standard=phpcs.ruleset.xml
   tags:
     - workflow-php-sdk
   except:
     - tags
+
+.php72: &php72
+  variables:
+    PHP: /usr/bin/php7.2
+
+.php73: &php73
+  variables:
+    PHP: /usr/bin/php7.3
+
+PHP Unit [PHP 7.2]:
+  <<: *before_script
+  <<: *phpunit
+  <<: *php72
+
+PHP Unit [PHP 7.3]:
+  <<: *before_script
+  <<: *phpunit
+  <<: *php73
+
+PHP CodeStyle [PHP 7.3]:
+  <<: *before_script
+  <<: *phpcs
+  <<: *php73

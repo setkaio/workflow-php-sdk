@@ -37,12 +37,12 @@ class TicketEntity extends AbstractEntity
     protected $editPostUrl;
 
     /**
-     * @var int Ticket's views count.
+     * @var integer Ticket's views count.
      */
     protected $viewsCount = 0;
 
     /**
-     * @var int Ticket's comments count.
+     * @var integer Ticket's comments count.
      */
     protected $commentsCount = 0;
 
